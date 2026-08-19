@@ -5,6 +5,14 @@
 You export your Stremio addons once, push the JSON to this repo, and your friend runs a single command.
 A dark little window opens, they sign in, hit **Install**, and watch every addon turn green or red.
 
+On a Windows box with nothing on it, this single line installs `uv` and opens the app:
+
+```powershell
+powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"; $env:Path = "$env:USERPROFILE\.local\bin;$env:Path"; uvx --from https://github.com/TopSpeed0/Uv-Stremeio-Fast-ADD/archive/refs/heads/main.zip stremio-fast-add
+```
+
+If `uv` is already installed, that's just:
+
 ```bash
 uvx --from https://github.com/TopSpeed0/Uv-Stremeio-Fast-ADD/archive/refs/heads/main.zip stremio-fast-add
 ```
@@ -12,8 +20,8 @@ uvx --from https://github.com/TopSpeed0/Uv-Stremeio-Fast-ADD/archive/refs/heads/
 No clone, no `pip install`, no virtualenv, no dependencies, **not even git** — the whole thing is
 standard-library Python plus tkinter, so `uv` downloads it and runs it in a couple of seconds.
 
-Tested end to end in a fresh Windows Sandbox: uv installed, addons pushed to the account, streams and
-subtitles playing — on a machine that had nothing on it.
+Tested end to end in a fresh Windows Sandbox: uv installed, GUI up, addons pushed to the account, streams
+and subtitles playing — on a machine that had nothing on it, in one paste.
 
 ---
 
@@ -23,18 +31,14 @@ subtitles playing — on a machine that had nothing on it.
 
 1. **אתה** מריץ פעם אחת `--export` — כל התוספים מהחשבון שלך נשמרים לקובץ `default.json` בתוך הריפו.
 2. אתה עושה `git push`.
-3. **החבר** מריץ שתי פקודות — אחת שמתקינה את uv, ואחת שמריצה את הכלי:
+3. **החבר** מדביק שורה אחת ב-PowerShell — היא מתקינה uv, מסדרת PATH, ופותחת את הכלי:
 
 ```powershell
-powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"; $env:Path = "$env:USERPROFILE\.local\bin;$env:Path"; uvx --from https://github.com/TopSpeed0/Uv-Stremeio-Fast-ADD/archive/refs/heads/main.zip stremio-fast-add
 ```
 
-```powershell
-uvx --from https://github.com/TopSpeed0/Uv-Stremeio-Fast-ADD/archive/refs/heads/main.zip stremio-fast-add
-```
-
-   **בלי אדמין**, ולפתוח טרמינל חדש בין השתיים. נפתח GUI, הוא מתחבר לחשבון Stremio שלו, לוחץ Install —
-   וכל תוסף מקבל סטטוס משלו: ירוק = הותקן, סגול = כבר היה שם, אדום = נכשל (עם הסיבה).
+   **בלי אדמין.** תיקון ה-PATH באמצע חוסך את הצורך לפתוח טרמינל חדש. נפתח GUI, הוא מתחבר לחשבון Stremio
+   שלו, לוחץ Install — וכל תוסף מקבל סטטוס משלו: ירוק = הותקן, סגול = כבר היה שם, אדום = נכשל (עם הסיבה).
 
 התוספים הקיימים אצל החבר **לא נמחקים** — הם רק מתווספים, בלי כפילויות.
 
@@ -158,7 +162,13 @@ powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | ie
 
 Astral's official installer, no admin needed — it installs into your own user profile. **Don't run it
 elevated:** as admin it lands in the administrator's profile and `uv` won't be on your PATH afterwards.
-Open a new terminal once it finishes so the PATH change takes effect.
+
+The PATH change only reaches a *new* terminal, so either open one, or patch the running session and keep
+going in the same paste:
+
+```powershell
+$env:Path = "$env:USERPROFILE\.local\bin;$env:Path"
+```
 
 `winget install --id=astral-sh.uv -e` works too, where winget exists — Windows Sandbox, for one, has neither
 winget nor git, which is why the script above and the zip URL are the defaults here.
