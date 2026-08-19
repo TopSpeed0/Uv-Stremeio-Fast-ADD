@@ -10,10 +10,15 @@ import sys
 from . import __version__, api, core, store
 
 EPILOG = """\
+front end:
+  a desktop window on Windows and macOS, a console UI in any Linux/WSL/SSH
+  terminal, plain output when there is neither. --gui/--tui/--cli override.
+
 examples:
-  uvx --from git+https://github.com/TopSpeed0/Uv-Stremeio-Fast-ADD stremio-fast-add
+  uvx --from https://github.com/TopSpeed0/Uv-Stremeio-Fast-ADD/archive/refs/heads/main.zip stremio-fast-add
   uv run stremio-fast-add --export
-  uv run stremio-fast-add --cli --addons addons.json
+  uv run stremio-fast-add --tui
+  uv run stremio-fast-add --cli --dry-run
 """
 
 
