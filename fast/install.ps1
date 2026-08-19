@@ -1,2 +1,2 @@
 #Fast Install & run
-powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex" ; $env:Path = "C:\Users\$env:USERNAME\.local\bin;$env:Path" ; powershell -ExecutionPolicy ByPass -c "uvx --from https://github.com/TopSpeed0/Uv-Stremeio-Fast-ADD/archive/refs/heads/main.zip stremio-fast-add"
+powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex" ; $env:Path = "C:\Users\$env:USERNAME\.local\bin;$env:Path" ; powershell -ExecutionPolicy ByPass -c "uvx --refresh --from https://github.com/TopSpeed0/Uv-Stremeio-Fast-ADD/archive/refs/heads/main.zip stremio-fast-add"

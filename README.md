@@ -21,7 +21,7 @@ before you paste it; that goes for any `irm | iex` line anyone sends you.
 <summary>Rather not pipe a script? Same thing, spelled out inline.</summary>
 
 ```powershell
-powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"; $env:Path = "$env:USERPROFILE\.local\bin;$env:Path"; uvx --from https://github.com/TopSpeed0/Uv-Stremeio-Fast-ADD/archive/refs/heads/main.zip stremio-fast-add
+powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"; $env:Path = "$env:USERPROFILE\.local\bin;$env:Path"; uvx --refresh --from https://github.com/TopSpeed0/Uv-Stremeio-Fast-ADD/archive/refs/heads/main.zip stremio-fast-add
 ```
 
 </details>
@@ -29,7 +29,7 @@ powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | ie
 Already have `uv`? Then it's just the one command, on any OS:
 
 ```bash
-uvx --from https://github.com/TopSpeed0/Uv-Stremeio-Fast-ADD/archive/refs/heads/main.zip stremio-fast-add
+uvx --refresh --from https://github.com/TopSpeed0/Uv-Stremeio-Fast-ADD/archive/refs/heads/main.zip stremio-fast-add
 ```
 
 No clone, no `pip install`, no virtualenv, no dependencies, **not even git** — the whole thing is
@@ -85,10 +85,14 @@ You can also do it from the GUI: connect, then **Export my addons**.
 Send them the [one-prompt install](#one-prompt-install) line. If they already have `uv`:
 
 ```bash
-uvx --from https://github.com/TopSpeed0/Uv-Stremeio-Fast-ADD/archive/refs/heads/main.zip stremio-fast-add
+uvx --refresh --from https://github.com/TopSpeed0/Uv-Stremeio-Fast-ADD/archive/refs/heads/main.zip stremio-fast-add
 ```
 
 That's the whole handoff. Everything ships inside the package, including the addon list.
+
+`--refresh` is there for the *second* run: uv caches the zip by URL, so without it a friend who already
+ran the command once would quietly reinstall yesterday's addon list. With it, every run picks up whatever
+you last pushed.
 
 If they have git and want the repo form instead, `--from git+https://github.com/TopSpeed0/Uv-Stremeio-Fast-ADD`
 does the same thing. The zip is the default here because a bare Windows box has no git.
