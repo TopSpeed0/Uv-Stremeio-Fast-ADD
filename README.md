@@ -52,9 +52,14 @@ On WSL that opens a normal Windows window, courtesy of WSLg — see below.
 
 | where | default | override with |
 |---|---|---|
-| Windows, macOS | the desktop window (tkinter) | `--tui`, `--cli` |
+| Windows | the desktop window (tkinter) | `--cli` |
+| macOS | the desktop window (tkinter) | `--tui`, `--cli` |
 | Linux, WSL, SSH — in a terminal | the console UI (curses) | `--gui`, `--cli` |
 | no terminal and no display | plain linear output | — |
+
+`--tui` is not offered on Windows: CPython there ships the `curses` package without the `_curses`
+extension behind it, so there is no console UI to run. Asking for it anyway prints a one-line reason
+and exits `2`, rather than a traceback.
 
 A Linux desktop session still defaults to the console UI, since that is what a terminal implies; pass
 `--gui` for the window.
@@ -160,7 +165,8 @@ does the same thing. The zip is the default here because a bare Windows box has 
 
 ## The GUI
 
-The console UI mirrors this screen for screen — same rows, same statuses, same switches.
+The console UI mirrors this screen for screen — same rows, same statuses, same switches, driven by
+`space` `a` `n` `c` `i` `d` `r` `e` `q` instead of the mouse.
 
 | | |
 |---|---|
@@ -198,8 +204,21 @@ uv run stremio-fast-add --cli
     + 6 installed   = 1 already there   ! 1 failed
 ```
 
-Useful flags: `--addons <path|URL>`, `--replace`, `--dry-run`, `--auth-key`, `--email` / `--password`
-(or the env vars `STREMIO_EMAIL`, `STREMIO_PASSWORD`, `STREMIO_AUTHKEY`). Exit code is `1` if anything failed.
+Every flag:
+
+| flag | what it does |
+|---|---|
+| `--addons SRC` | load the profile from a path or URL instead of the bundled one |
+| `--gui` / `--tui` / `--cli` | force a front end instead of letting it pick |
+| `--export [PATH]` | save the account's addons to a profile and exit |
+| `--name NAME` | label that export; the default deliberately carries no account details |
+| `--email` / `--password` | credentials, or `STREMIO_EMAIL` / `STREMIO_PASSWORD`; prompted if omitted |
+| `--auth-key KEY` | sign in with an authKey instead, or `STREMIO_AUTHKEY` |
+| `--replace` | drop the account's current addons first (protected ones are kept) |
+| `--dry-run` | check every addon, write nothing |
+| `--version` / `--help` | the usual |
+
+Exit codes: `0` all good, `1` something failed to install, `2` could not run at all.
 
 ---
 

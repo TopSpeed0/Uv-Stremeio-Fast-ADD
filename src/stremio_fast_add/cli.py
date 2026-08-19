@@ -1,4 +1,4 @@
-"""Entry point. Opens the GUI by default; --cli and --export run headless."""
+"""Entry point. Picks a front end - window, console UI, or plain output - and runs it."""
 
 from __future__ import annotations
 
@@ -122,7 +122,8 @@ def _pick_frontend(args) -> str:
         return "gui"
     if sys.platform in ("win32", "darwin") and _has("tkinter"):
         return "gui"
-    if _has("curses") and sys.stdout.isatty():
+    # `curses` is a package dir on Windows too - only the `_curses` extension tells the truth.
+    if _has("_curses") and sys.stdout.isatty():
         return "tui"
     # Headless Linux: only reach for a window if there is actually a display to put it on.
     if _has("tkinter") and (os.environ.get("DISPLAY") or os.environ.get("WAYLAND_DISPLAY")):
