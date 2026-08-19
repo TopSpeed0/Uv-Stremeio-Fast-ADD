@@ -40,6 +40,14 @@ is in Python's standard library, so the dependency count stays at zero. It works
 space toggle   a all   n none   c sign in   i install   d dry run   r replace   e export   q quit
 ```
 
+Want the desktop window instead? Anything after `sh -s --` is passed straight to the app:
+
+```bash
+curl -LsSf https://raw.githubusercontent.com/TopSpeed0/Uv-Stremeio-Fast-ADD/main/fast/install.sh | sh -s -- --gui
+```
+
+On WSL that opens a normal Windows window, courtesy of WSLg — see below.
+
 ### Which front end you get
 
 | where | default | override with |
