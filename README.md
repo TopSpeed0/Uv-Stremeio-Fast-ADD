@@ -5,13 +5,28 @@
 You export your Stremio addons once, push the JSON to this repo, and your friend runs a single command.
 A dark little window opens, they sign in, hit **Install**, and watch every addon turn green or red.
 
-On a Windows box with nothing on it, this single line installs `uv` and opens the app:
+## One-prompt install
+
+Paste this into PowerShell on a Windows box with nothing on it. It installs `uv`, fetches the app, and
+opens the window — no admin, no Python, no git, no second step.
+
+```powershell
+powershell -ExecutionPolicy ByPass -c "irm https://raw.githubusercontent.com/TopSpeed0/Uv-Stremeio-Fast-ADD/main/fast/install.ps1 | iex"
+```
+
+That runs [`fast/install.ps1`](fast/install.ps1) — a comment and one command, nothing hidden. Read it
+before you paste it; that goes for any `irm | iex` line anyone sends you.
+
+<details>
+<summary>Rather not pipe a script? Same thing, spelled out inline.</summary>
 
 ```powershell
 powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"; $env:Path = "$env:USERPROFILE\.local\bin;$env:Path"; uvx --from https://github.com/TopSpeed0/Uv-Stremeio-Fast-ADD/archive/refs/heads/main.zip stremio-fast-add
 ```
 
-If `uv` is already installed, that's just:
+</details>
+
+Already have `uv`? Then it's just the one command, on any OS:
 
 ```bash
 uvx --from https://github.com/TopSpeed0/Uv-Stremeio-Fast-ADD/archive/refs/heads/main.zip stremio-fast-add
@@ -34,11 +49,11 @@ and subtitles playing — on a machine that had nothing on it, in one paste.
 3. **החבר** מדביק שורה אחת ב-PowerShell — היא מתקינה uv, מסדרת PATH, ופותחת את הכלי:
 
 ```powershell
-powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"; $env:Path = "$env:USERPROFILE\.local\bin;$env:Path"; uvx --from https://github.com/TopSpeed0/Uv-Stremeio-Fast-ADD/archive/refs/heads/main.zip stremio-fast-add
+powershell -ExecutionPolicy ByPass -c "irm https://raw.githubusercontent.com/TopSpeed0/Uv-Stremeio-Fast-ADD/main/fast/install.ps1 | iex"
 ```
 
-   **בלי אדמין.** תיקון ה-PATH באמצע חוסך את הצורך לפתוח טרמינל חדש. נפתח GUI, הוא מתחבר לחשבון Stremio
-   שלו, לוחץ Install — וכל תוסף מקבל סטטוס משלו: ירוק = הותקן, סגול = כבר היה שם, אדום = נכשל (עם הסיבה).
+   **בלי אדמין, בלי Python, בלי git.** נפתח GUI, הוא מתחבר לחשבון Stremio שלו, לוחץ Install —
+   וכל תוסף מקבל סטטוס משלו: ירוק = הותקן, סגול = כבר היה שם, אדום = נכשל (עם הסיבה).
 
 התוספים הקיימים אצל החבר **לא נמחקים** — הם רק מתווספים, בלי כפילויות.
 
@@ -66,6 +81,8 @@ git add -A && git commit -m "my stremio addons" && git push
 You can also do it from the GUI: connect, then **Export my addons**.
 
 ### 2. Install it (your friend, once)
+
+Send them the [one-prompt install](#one-prompt-install) line. If they already have `uv`:
 
 ```bash
 uvx --from https://github.com/TopSpeed0/Uv-Stremeio-Fast-ADD/archive/refs/heads/main.zip stremio-fast-add
