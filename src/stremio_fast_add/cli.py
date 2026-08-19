@@ -26,7 +26,9 @@ def _parser() -> argparse.ArgumentParser:
     )
     parser.add_argument("--version", action="version", version=f"stremio-fast-add {__version__}")
     parser.add_argument("--addons", metavar="SRC", help="addon profile: path or URL (default: bundled profile)")
-    parser.add_argument("--cli", action="store_true", help="install from the terminal, no GUI")
+    parser.add_argument("--cli", action="store_true", help="plain linear output, no interactive screen")
+    parser.add_argument("--tui", action="store_true", help="force the console UI (curses)")
+    parser.add_argument("--gui", action="store_true", help="force the desktop window (tkinter)")
     parser.add_argument("--export", nargs="?", const="", metavar="PATH",
                         help="save the signed-in account's addons to a profile and exit")
     parser.add_argument("--email", help="account email (or STREMIO_EMAIL)")
@@ -99,11 +101,40 @@ def _run_cli(args) -> int:
     return 1 if summary.failed else 0
 
 
+def _has(module: str) -> bool:
+    import importlib.util
+
+    return importlib.util.find_spec(module) is not None
+
+
+def _pick_frontend(args) -> str:
+    """Desktop window on Windows and macOS, console UI on Linux and WSL, --flags win."""
+    if args.export is not None or args.cli:
+        return "cli"
+    if args.tui:
+        return "tui"
+    if args.gui:
+        return "gui"
+    if sys.platform in ("win32", "darwin") and _has("tkinter"):
+        return "gui"
+    if _has("curses") and sys.stdout.isatty():
+        return "tui"
+    # Headless Linux: only reach for a window if there is actually a display to put it on.
+    if _has("tkinter") and (os.environ.get("DISPLAY") or os.environ.get("WAYLAND_DISPLAY")):
+        return "gui"
+    return "cli"
+
+
 def main(argv: list[str] | None = None) -> int:
     args = _parser().parse_args(argv)
+    frontend = _pick_frontend(args)
     try:
-        if args.cli or args.export is not None:
+        if frontend == "cli":
             return _run_cli(args)
+        if frontend == "tui":
+            from . import tui
+
+            return tui.run(args.addons)
         from . import gui
 
         return gui.run(args.addons)
@@ -112,8 +143,8 @@ def main(argv: list[str] | None = None) -> int:
         return 2
     except KeyboardInterrupt:
         return 130
-    except ImportError as exc:  # tkinter missing on a stripped-down Python
-        print(f"[x] no GUI available ({exc}). Re-run with --cli.", file=sys.stderr)
+    except ImportError as exc:  # tkinter or curses missing on a stripped-down Python
+        print(f"[x] no {frontend} front end available ({exc}). Re-run with --cli.", file=sys.stderr)
         return 2
 
 

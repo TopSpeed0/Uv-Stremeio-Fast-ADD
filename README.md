@@ -26,14 +26,42 @@ powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | ie
 
 </details>
 
-Already have `uv`? Then it's just the one command, on any OS:
+### WSL, Linux, macOS
+
+```bash
+curl -LsSf https://raw.githubusercontent.com/TopSpeed0/Uv-Stremeio-Fast-ADD/main/fast/install.sh | sh
+```
+
+Same idea, and here you get a **console UI** instead of a window — the same table, the same per-addon
+statuses and colours, driven from the keyboard. No X server, no WSLg, nothing extra to install: `curses`
+is in Python's standard library, so the dependency count stays at zero. It works over plain SSH too.
+
+```
+space toggle   a all   n none   c sign in   i install   d dry run   r replace   e export   q quit
+```
+
+### Which front end you get
+
+| where | default | override with |
+|---|---|---|
+| Windows, macOS | the desktop window (tkinter) | `--tui`, `--cli` |
+| Linux, WSL, SSH — in a terminal | the console UI (curses) | `--gui`, `--cli` |
+| no terminal and no display | plain linear output | — |
+
+A Linux desktop session still defaults to the console UI, since that is what a terminal implies; pass
+`--gui` for the window.
+
+### Already have `uv`?
+
+Then it's just the one command, on any OS:
 
 ```bash
 uvx --refresh --from https://github.com/TopSpeed0/Uv-Stremeio-Fast-ADD/archive/refs/heads/main.zip stremio-fast-add
 ```
 
 No clone, no `pip install`, no virtualenv, no dependencies, **not even git** — the whole thing is
-standard-library Python plus tkinter, so `uv` downloads it and runs it in a couple of seconds.
+standard-library Python (`tkinter` for the window, `curses` for the console UI, `urllib` for the API),
+so `uv` downloads it and runs it in a couple of seconds.
 
 ### Stremio doesn't have to be installed either
 
@@ -61,6 +89,12 @@ powershell -ExecutionPolicy ByPass -c "irm https://raw.githubusercontent.com/Top
 
    **בלי אדמין, בלי Python, בלי git.** נפתח GUI, הוא מתחבר לחשבון Stremio שלו, לוחץ Install —
    וכל תוסף מקבל סטטוס משלו: ירוק = הותקן, סגול = כבר היה שם, אדום = נכשל (עם הסיבה).
+
+   ב-WSL, לינוקס או מק — אותו דבר, רק שמקבלים **ממשק קונסולה** במקום חלון:
+
+```bash
+curl -LsSf https://raw.githubusercontent.com/TopSpeed0/Uv-Stremeio-Fast-ADD/main/fast/install.sh | sh
+```
 
 התוספים הקיימים אצל החבר **לא נמחקים** — הם רק מתווספים, בלי כפילויות.
 
@@ -112,6 +146,8 @@ does the same thing. The zip is the default here because a bare Windows box has 
 ---
 
 ## The GUI
+
+The console UI mirrors this screen for screen — same rows, same statuses, same switches.
 
 | | |
 |---|---|
@@ -184,8 +220,11 @@ uvx --from https://github.com/TopSpeed0/Uv-Stremeio-Fast-ADD/archive/refs/heads/
 
 ## Requirements
 
-`uv`, and that's it — it brings its own Python. Windows, macOS and Linux; the GUI needs tkinter, which uv's
-managed Python ships with (on a distro Python without it, use `--cli`).
+`uv`, and that's it — it brings its own Python. Windows, macOS and Linux.
+
+The window needs `tkinter` and the console UI needs `curses`; both are standard library, and uv's managed
+Python ships tkinter on every platform. If you land on a stripped-down distro Python with neither, `--cli`
+always works.
 
 Install uv on Windows:
 
