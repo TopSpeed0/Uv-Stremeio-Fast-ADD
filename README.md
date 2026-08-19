@@ -35,8 +35,15 @@ uvx --refresh --from https://github.com/TopSpeed0/Uv-Stremeio-Fast-ADD/archive/r
 No clone, no `pip install`, no virtualenv, no dependencies, **not even git** — the whole thing is
 standard-library Python plus tkinter, so `uv` downloads it and runs it in a couple of seconds.
 
-Tested end to end in a fresh Windows Sandbox: uv installed, GUI up, addons pushed to the account, streams
-and subtitles playing — on a machine that had nothing on it, in one paste.
+### Stremio doesn't have to be installed either
+
+This writes to the Stremio **account**, not to a local install. The addons land server-side, so they show
+up everywhere that account signs in — the desktop app, the web player, a phone, an Android TV — including
+devices that were never near the machine you ran this on.
+
+Which means you can run it anywhere: a throwaway Windows Sandbox, a work laptop, someone else's PC. Wipe
+the box a minute later; the account keeps the addons. Tested exactly that way — fresh Sandbox, one paste,
+nothing installed, account loaded.
 
 ---
 
@@ -56,6 +63,11 @@ powershell -ExecutionPolicy ByPass -c "irm https://raw.githubusercontent.com/Top
    וכל תוסף מקבל סטטוס משלו: ירוק = הותקן, סגול = כבר היה שם, אדום = נכשל (עם הסיבה).
 
 התוספים הקיימים אצל החבר **לא נמחקים** — הם רק מתווספים, בלי כפילויות.
+
+> 💡 **לא צריך ש-Stremio יהיה מותקן על המחשב שמריץ את זה.** הכלי כותב ל**חשבון** של Stremio, לא להתקנה
+> מקומית — אז התוספים נשמרים בשרת ומופיעים בכל מקום שהחשבון מחובר בו: אפליקציית הדסקטופ, הדפדפן, טלפון,
+> Android TV. אפשר להריץ מ-Windows Sandbox זמני, ממחשב של מישהו אחר, מכל ווינדוס. מוחקים את המכונה
+> אחרי דקה — והחשבון נשאר עם כל התוספים.
 
 > ⚠️ **שים לב לפרטיות:** תוספים מוגדרים (Trakt, RealDebrid, MDBList וכו') שומרים את הטוקן/מפתח שלך
 > *בתוך ה־URL*. הכלי מזהה אותם ומזהיר אותך בזמן הייצוא — תמחק אותם מה־JSON לפני שאתה דוחף לריפו ציבורי,
