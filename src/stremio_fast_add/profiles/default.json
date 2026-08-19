@@ -1,0 +1,2926 @@
+{
+  "name": "Stremio addons",
+  "exported_at": "2026-08-19T19:15:11+00:00",
+  "count": 23,
+  "addons": [
+    {
+      "transportUrl": "https://tmdb-movie-subs.stremio.homes/heb/manifest.json",
+      "transportName": "",
+      "manifest": {
+        "id": "community.tmdb.movie.subs",
+        "version": "0.0.1",
+        "name": "TMDB Movie Subs",
+        "contactEmail": "vancengvn@gmail.com",
+        "description": "The top movies have subtitles on OpenSubtitles and Subscene, tailored to your languages.",
+        "logo": "https://i.ibb.co/BVvghJV/tmdb-movie-subs-2.png",
+        "background": "https://raw.githubusercontent.com/Vance-ng-vn/images/main/Lena%20Le%20-%20Calling%20You%20Home-1.jpeg",
+        "types": [
+          "movie",
+          "subtitles"
+        ],
+        "resources": [
+          "catalog"
+        ],
+        "idPrefixes": null,
+        "catalogs": [
+          {
+            "id": "tmdb-popular-subs",
+            "type": "movie",
+            "name": "TMDB - Popular (Subs)",
+            "extra": [
+              {
+                "name": "genre",
+                "isRequired": true,
+                "options": [
+                  "Top",
+                  "Action",
+                  "Adventure",
+                  "Animation",
+                  "Comedy",
+                  "Crime",
+                  "Documentary",
+                  "Drama",
+                  "Family",
+                  "Fantasy",
+                  "History",
+                  "Hornor",
+                  "Music",
+                  "Mystery",
+                  "Romance",
+                  "Science Fiction",
+                  "TV Movie",
+                  "Thriller",
+                  "War",
+                  "Western"
+                ],
+                "optionsLimit": 1
+              },
+              {
+                "name": "skip",
+                "isRequired": false,
+                "options": [],
+                "optionsLimit": 1
+              }
+            ]
+          },
+          {
+            "id": "tmdb-trending-subs",
+            "type": "movie",
+            "name": "TMDB - Trending (Subs)",
+            "extra": [
+              {
+                "name": "genre",
+                "isRequired": true,
+                "options": [
+                  "Day",
+                  "Week"
+                ],
+                "optionsLimit": 1
+              },
+              {
+                "name": "skip",
+                "isRequired": false,
+                "options": [],
+                "optionsLimit": 1
+              }
+            ]
+          }
+        ],
+        "addonCatalogs": [],
+        "behaviorHints": {
+          "adult": false,
+          "p2p": false,
+          "configurable": true,
+          "configurationRequired": false
+        }
+      },
+      "flags": {
+        "official": false,
+        "protected": false
+      }
+    },
+    {
+      "transportUrl": "https://thepiratebay-plus.strem.fun/manifest.json",
+      "transportName": "",
+      "manifest": {
+        "id": "com.stremio.thepiratebay.plus",
+        "version": "1.4.0",
+        "name": "ThePirateBay+",
+        "contactEmail": null,
+        "description": "Search for movies, series and anime from ThePirateBay",
+        "logo": "https://i.imgur.com/dPa2clS.png",
+        "background": "https://i.imgur.com/t8wVwcg.jpg",
+        "types": [
+          "movie",
+          "series"
+        ],
+        "resources": [
+          "stream"
+        ],
+        "idPrefixes": [
+          "tt"
+        ],
+        "catalogs": [],
+        "addonCatalogs": [],
+        "behaviorHints": {
+          "adult": false,
+          "p2p": false,
+          "configurable": false,
+          "configurationRequired": false
+        }
+      },
+      "flags": {
+        "official": false,
+        "protected": false
+      }
+    },
+    {
+      "transportUrl": "https://150203dd784e-cinetorrent-addon.baby-beamup.club/manifest.json",
+      "transportName": "",
+      "manifest": {
+        "id": "org.cinetorrent",
+        "version": "1.0.3",
+        "name": "CineTorrent",
+        "contactEmail": null,
+        "description": "Find Multi Language Torrent Streams for Movies and TV Shows supports (Brazilian Portuguese and English) - (TV Shows Support Comming Soon)",
+        "logo": "https://i.ibb.co/RDtR0q0/Logo.jpg",
+        "background": null,
+        "types": [
+          "movie",
+          "series"
+        ],
+        "resources": [
+          "stream"
+        ],
+        "idPrefixes": [
+          "tt"
+        ],
+        "catalogs": [
+          {
+            "id": "top_movies",
+            "type": "movie",
+            "name": "CineTorrent - Top",
+            "extraRequired": [],
+            "extraSupported": []
+          }
+        ],
+        "addonCatalogs": [],
+        "behaviorHints": {
+          "adult": false,
+          "p2p": false,
+          "configurable": false,
+          "configurationRequired": false
+        }
+      },
+      "flags": {
+        "official": false,
+        "protected": false
+      }
+    },
+    {
+      "transportUrl": "https://torrentio.strem.fun/language=hebrew%7Csizefilter=l/manifest.json",
+      "transportName": "",
+      "manifest": {
+        "id": "com.stremio.torrentio.addon",
+        "version": "0.0.15",
+        "name": "Torrentio",
+        "contactEmail": null,
+        "description": "Provides torrent streams from scraped torrent providers. Currently supports YTS(+), EZTV(+), RARBG(+), 1337x(+), ThePirateBay(+), KickassTorrents(+), TorrentGalaxy(+), MagnetDL(+), HorribleSubs(+), NyaaSi(+), TokyoTosho(+), AniDex(+), Rutor(+), Rutracker(+), Comando(+), BluDV(+), MicoLeaoDublado(+), Torrent9(+), ilCorSaRoNeRo(+), MejorTorrent(+), Wolfmax4k(+), Cinecalidad(+), BestTorrents(+). To configure providers, RealDebrid/Premiumize/AllDebrid/DebridLink/EasyDebrid/Offcloud/TorBox/Put.io support and other settings visit https://torrentio.strem.fun",
+        "logo": "https://torrentio.strem.fun/images/logo_v1.png",
+        "background": "https://torrentio.strem.fun/images/background_v1.jpg",
+        "types": [
+          "movie",
+          "series",
+          "anime",
+          "other"
+        ],
+        "resources": [
+          {
+            "name": "stream",
+            "types": [
+              "movie",
+              "series",
+              "anime"
+            ],
+            "idPrefixes": [
+              "tt",
+              "kitsu"
+            ]
+          }
+        ],
+        "idPrefixes": null,
+        "catalogs": [],
+        "addonCatalogs": [],
+        "behaviorHints": {
+          "adult": false,
+          "p2p": false,
+          "configurable": true,
+          "configurationRequired": false
+        }
+      },
+      "flags": {
+        "official": false,
+        "protected": false
+      }
+    },
+    {
+      "transportUrl": "https://caching.stremio.net/publicdomainmovies.now.sh/manifest.json",
+      "transportName": "",
+      "manifest": {
+        "id": "org.stremio.pubdomainmovies",
+        "version": "1.0.0",
+        "name": "Public Domain Movies",
+        "contactEmail": null,
+        "description": "Torrents for public domain movies. Includes a collection of more then 500 public domain movies.",
+        "logo": "https://johnserv531.github.io/gh-images/1586344884.jpg",
+        "background": null,
+        "types": [
+          "movie"
+        ],
+        "resources": [
+          "catalog",
+          "stream"
+        ],
+        "idPrefixes": [
+          "tt"
+        ],
+        "catalogs": [
+          {
+            "id": "publicdomainmovies",
+            "type": "movie",
+            "name": null,
+            "extra": [
+              {
+                "name": "skip",
+                "isRequired": false,
+                "options": [],
+                "optionsLimit": 1
+              },
+              {
+                "name": "search",
+                "isRequired": false,
+                "options": [],
+                "optionsLimit": 1
+              }
+            ]
+          }
+        ],
+        "addonCatalogs": [],
+        "behaviorHints": {
+          "adult": false,
+          "p2p": false,
+          "configurable": false,
+          "configurationRequired": false
+        }
+      },
+      "flags": {
+        "official": true,
+        "protected": false
+      }
+    },
+    {
+      "transportUrl": "https://v3-cinemeta.strem.io/manifest.json",
+      "transportName": "",
+      "manifest": {
+        "id": "com.linvo.cinemeta",
+        "version": "3.0.14",
+        "name": "Cinemeta",
+        "contactEmail": null,
+        "description": "The official addon for movie and series catalogs",
+        "logo": null,
+        "background": null,
+        "types": [
+          "movie",
+          "series"
+        ],
+        "resources": [
+          "catalog",
+          "meta",
+          "addon_catalog"
+        ],
+        "idPrefixes": [
+          "tt"
+        ],
+        "catalogs": [
+          {
+            "id": "top",
+            "type": "movie",
+            "name": "Popular",
+            "extra": [
+              {
+                "name": "genre",
+                "isRequired": false,
+                "options": [
+                  "Action",
+                  "Adventure",
+                  "Animation",
+                  "Biography",
+                  "Comedy",
+                  "Crime",
+                  "Documentary",
+                  "Drama",
+                  "Family",
+                  "Fantasy",
+                  "History",
+                  "Horror",
+                  "Mystery",
+                  "Romance",
+                  "Sci-Fi",
+                  "Sport",
+                  "Thriller",
+                  "War",
+                  "Western"
+                ],
+                "optionsLimit": 1
+              },
+              {
+                "name": "search",
+                "isRequired": false,
+                "options": [],
+                "optionsLimit": 1
+              },
+              {
+                "name": "skip",
+                "isRequired": false,
+                "options": [],
+                "optionsLimit": 1
+              }
+            ]
+          },
+          {
+            "id": "top",
+            "type": "series",
+            "name": "Popular",
+            "extra": [
+              {
+                "name": "genre",
+                "isRequired": false,
+                "options": [
+                  "Action",
+                  "Adventure",
+                  "Animation",
+                  "Biography",
+                  "Comedy",
+                  "Crime",
+                  "Documentary",
+                  "Drama",
+                  "Family",
+                  "Fantasy",
+                  "History",
+                  "Horror",
+                  "Mystery",
+                  "Romance",
+                  "Sci-Fi",
+                  "Sport",
+                  "Thriller",
+                  "War",
+                  "Western",
+                  "Reality-TV",
+                  "Talk-Show",
+                  "Game-Show"
+                ],
+                "optionsLimit": 1
+              },
+              {
+                "name": "search",
+                "isRequired": false,
+                "options": [],
+                "optionsLimit": 1
+              },
+              {
+                "name": "skip",
+                "isRequired": false,
+                "options": [],
+                "optionsLimit": 1
+              }
+            ]
+          },
+          {
+            "id": "year",
+            "type": "movie",
+            "name": "New",
+            "extra": [
+              {
+                "name": "genre",
+                "isRequired": true,
+                "options": [
+                  "2026",
+                  "2025",
+                  "2024",
+                  "2023",
+                  "2022",
+                  "2021",
+                  "2020",
+                  "2019",
+                  "2018",
+                  "2017",
+                  "2016",
+                  "2015",
+                  "2014",
+                  "2013",
+                  "2012",
+                  "2011",
+                  "2010",
+                  "2009",
+                  "2008",
+                  "2007",
+                  "2006",
+                  "2005",
+                  "2004",
+                  "2003",
+                  "2002",
+                  "2001",
+                  "2000",
+                  "1999",
+                  "1998",
+                  "1997",
+                  "1996",
+                  "1995",
+                  "1994",
+                  "1993",
+                  "1992",
+                  "1991",
+                  "1990",
+                  "1989",
+                  "1988",
+                  "1987",
+                  "1986",
+                  "1985",
+                  "1984",
+                  "1983",
+                  "1982",
+                  "1981",
+                  "1980",
+                  "1979",
+                  "1978",
+                  "1977",
+                  "1976",
+                  "1975",
+                  "1974",
+                  "1973",
+                  "1972",
+                  "1971",
+                  "1970",
+                  "1969",
+                  "1968",
+                  "1967",
+                  "1966",
+                  "1965",
+                  "1964",
+                  "1963",
+                  "1962",
+                  "1961",
+                  "1960",
+                  "1959",
+                  "1958",
+                  "1957",
+                  "1956",
+                  "1955",
+                  "1954",
+                  "1953",
+                  "1952",
+                  "1951",
+                  "1950",
+                  "1949",
+                  "1948",
+                  "1947",
+                  "1946",
+                  "1945",
+                  "1944",
+                  "1943",
+                  "1942",
+                  "1941",
+                  "1940",
+                  "1939",
+                  "1938",
+                  "1937",
+                  "1936",
+                  "1935",
+                  "1934",
+                  "1933",
+                  "1932",
+                  "1931",
+                  "1930",
+                  "1929",
+                  "1928",
+                  "1927",
+                  "1926",
+                  "1925",
+                  "1924",
+                  "1923",
+                  "1922",
+                  "1921",
+                  "1920"
+                ],
+                "optionsLimit": 1
+              },
+              {
+                "name": "skip",
+                "isRequired": false,
+                "options": [],
+                "optionsLimit": 1
+              }
+            ]
+          },
+          {
+            "id": "year",
+            "type": "series",
+            "name": "New",
+            "extra": [
+              {
+                "name": "genre",
+                "isRequired": true,
+                "options": [
+                  "2026",
+                  "2025",
+                  "2024",
+                  "2023",
+                  "2022",
+                  "2021",
+                  "2020",
+                  "2019",
+                  "2018",
+                  "2017",
+                  "2016",
+                  "2015",
+                  "2014",
+                  "2013",
+                  "2012",
+                  "2011",
+                  "2010",
+                  "2009",
+                  "2008",
+                  "2007",
+                  "2006",
+                  "2005",
+                  "2004",
+                  "2003",
+                  "2002",
+                  "2001",
+                  "2000",
+                  "1999",
+                  "1998",
+                  "1997",
+                  "1996",
+                  "1995",
+                  "1994",
+                  "1993",
+                  "1992",
+                  "1991",
+                  "1990",
+                  "1989",
+                  "1988",
+                  "1987",
+                  "1986",
+                  "1985",
+                  "1984",
+                  "1983",
+                  "1982",
+                  "1981",
+                  "1980",
+                  "1979",
+                  "1978",
+                  "1977",
+                  "1976",
+                  "1975",
+                  "1974",
+                  "1973",
+                  "1972",
+                  "1971",
+                  "1970",
+                  "1969",
+                  "1968",
+                  "1967",
+                  "1966",
+                  "1965",
+                  "1964",
+                  "1963",
+                  "1962",
+                  "1961",
+                  "1960"
+                ],
+                "optionsLimit": 1
+              },
+              {
+                "name": "skip",
+                "isRequired": false,
+                "options": [],
+                "optionsLimit": 1
+              }
+            ]
+          },
+          {
+            "id": "imdbRating",
+            "type": "movie",
+            "name": "Featured",
+            "extra": [
+              {
+                "name": "genre",
+                "isRequired": false,
+                "options": [
+                  "Action",
+                  "Adventure",
+                  "Animation",
+                  "Biography",
+                  "Comedy",
+                  "Crime",
+                  "Documentary",
+                  "Drama",
+                  "Family",
+                  "Fantasy",
+                  "History",
+                  "Horror",
+                  "Mystery",
+                  "Romance",
+                  "Sci-Fi",
+                  "Sport",
+                  "Thriller",
+                  "War",
+                  "Western"
+                ],
+                "optionsLimit": 1
+              },
+              {
+                "name": "skip",
+                "isRequired": false,
+                "options": [],
+                "optionsLimit": 1
+              }
+            ]
+          },
+          {
+            "id": "imdbRating",
+            "type": "series",
+            "name": "Featured",
+            "extra": [
+              {
+                "name": "genre",
+                "isRequired": false,
+                "options": [
+                  "Action",
+                  "Adventure",
+                  "Animation",
+                  "Biography",
+                  "Comedy",
+                  "Crime",
+                  "Documentary",
+                  "Drama",
+                  "Family",
+                  "Fantasy",
+                  "History",
+                  "Horror",
+                  "Mystery",
+                  "Romance",
+                  "Sci-Fi",
+                  "Sport",
+                  "Thriller",
+                  "War",
+                  "Western",
+                  "Reality-TV",
+                  "Talk-Show",
+                  "Game-Show"
+                ],
+                "optionsLimit": 1
+              },
+              {
+                "name": "skip",
+                "isRequired": false,
+                "options": [],
+                "optionsLimit": 1
+              }
+            ]
+          },
+          {
+            "id": "last-videos",
+            "type": "series",
+            "name": "Last videos",
+            "extra": [
+              {
+                "name": "lastVideosIds",
+                "isRequired": true,
+                "options": [],
+                "optionsLimit": 100
+              }
+            ]
+          },
+          {
+            "id": "calendar-videos",
+            "type": "series",
+            "name": "Calendar videos",
+            "extra": [
+              {
+                "name": "calendarVideosIds",
+                "isRequired": true,
+                "options": [],
+                "optionsLimit": 100
+              }
+            ]
+          }
+        ],
+        "addonCatalogs": [
+          {
+            "id": "official",
+            "type": "all",
+            "name": "Official",
+            "extraRequired": [],
+            "extraSupported": []
+          },
+          {
+            "id": "official",
+            "type": "movie",
+            "name": "Official",
+            "extraRequired": [],
+            "extraSupported": []
+          },
+          {
+            "id": "official",
+            "type": "series",
+            "name": "Official",
+            "extraRequired": [],
+            "extraSupported": []
+          },
+          {
+            "id": "official",
+            "type": "channel",
+            "name": "Official",
+            "extraRequired": [],
+            "extraSupported": []
+          },
+          {
+            "id": "community",
+            "type": "all",
+            "name": "Community",
+            "extraRequired": [],
+            "extraSupported": []
+          },
+          {
+            "id": "community",
+            "type": "movie",
+            "name": "Community",
+            "extraRequired": [],
+            "extraSupported": []
+          },
+          {
+            "id": "community",
+            "type": "series",
+            "name": "Community",
+            "extraRequired": [],
+            "extraSupported": []
+          },
+          {
+            "id": "community",
+            "type": "channel",
+            "name": "Community",
+            "extraRequired": [],
+            "extraSupported": []
+          },
+          {
+            "id": "community",
+            "type": "tv",
+            "name": "Community",
+            "extraRequired": [],
+            "extraSupported": []
+          },
+          {
+            "id": "community",
+            "type": "Podcasts",
+            "name": "Community",
+            "extraRequired": [],
+            "extraSupported": []
+          },
+          {
+            "id": "community",
+            "type": "other",
+            "name": "Community",
+            "extraRequired": [],
+            "extraSupported": []
+          }
+        ],
+        "behaviorHints": {
+          "adult": false,
+          "p2p": false,
+          "configurable": false,
+          "configurationRequired": false
+        }
+      },
+      "flags": {
+        "official": true,
+        "protected": true
+      }
+    },
+    {
+      "transportUrl": "https://comet.elfhosted.com/manifest.json",
+      "transportName": "",
+      "manifest": {
+        "id": "comet.elfhosted.com",
+        "version": "2.0.0",
+        "name": "Comet | ElfHosted",
+        "contactEmail": null,
+        "description": "Stremio's fastest torrent/debrid search add-on.",
+        "logo": "https://raw.githubusercontent.com/g0ldyy/comet/refs/heads/main/comet/assets/icon.png",
+        "background": "https://raw.githubusercontent.com/g0ldyy/comet/refs/heads/main/comet/assets/background.png",
+        "types": [
+          "movie",
+          "series",
+          "anime",
+          "other"
+        ],
+        "resources": [
+          {
+            "name": "stream",
+            "types": [
+              "movie",
+              "series"
+            ],
+            "idPrefixes": [
+              "tt",
+              "kitsu"
+            ]
+          }
+        ],
+        "idPrefixes": null,
+        "catalogs": [],
+        "addonCatalogs": [],
+        "behaviorHints": {
+          "adult": false,
+          "p2p": false,
+          "configurable": true,
+          "configurationRequired": false
+        }
+      },
+      "flags": {
+        "official": false,
+        "protected": false
+      }
+    },
+    {
+      "transportUrl": "https://torrentsdb.com/manifest.json",
+      "transportName": "",
+      "manifest": {
+        "id": "com.torrentsdb.addon",
+        "version": "1.0.0",
+        "name": "TorrentsDB",
+        "contactEmail": null,
+        "description": "Provides torrent streams from scraped torrent providers. Currently supports YTS(+), EZTV(+), 1337x(+), TorrentCSV(+), 1lou(+), Nyaa(+), Sk-CzTorrent(+), 1TamilBlasters(+), LimeTorrent(+), 1TamilMV(+), RARGB(+), Knaben(+), ThePirateBay(+), KickassTorrents(+), AnimeTosho(+), ExtremlymTorrents(+), YggTorrent(+), TokyoTosho(+), Rutor(+), Rutracker(+), Torrent9(+), ilCorSaRoNeRo(+), Manual(+). To configure providers, Debrider/EasyDebrid/Premiumize/AllDebrid/RealDebrid/DebridLink/Offcloud/TorBox/Put.io support and other settings visit https://torrentsdb.com",
+        "logo": "https://torrentsdb.com/icon.svg",
+        "background": null,
+        "types": [
+          "movie",
+          "series",
+          "anime",
+          "other"
+        ],
+        "resources": [
+          {
+            "name": "stream",
+            "types": [
+              "movie",
+              "series"
+            ],
+            "idPrefixes": [
+              "tt",
+              "kitsu"
+            ]
+          }
+        ],
+        "idPrefixes": null,
+        "catalogs": [],
+        "addonCatalogs": [],
+        "behaviorHints": {
+          "adult": false,
+          "p2p": false,
+          "configurable": true,
+          "configurationRequired": false
+        }
+      },
+      "flags": {
+        "official": false,
+        "protected": false
+      }
+    },
+    {
+      "transportUrl": "https://94c8cb9f702d-brazuca-torrents.baby-beamup.club/manifest.json",
+      "transportName": "",
+      "manifest": {
+        "id": "com.stremio.brazuca.addon",
+        "version": "0.1.1",
+        "name": "Brazuca Torrents",
+        "contactEmail": null,
+        "description": "Fornece streams de filmes e series dublados de provedores de torrent. Suporta atualmente ApacheTorrent(+), BaixaFilmesTorrentHD(+), EraiRaws(+), HDRTorrent(+), NyaaSi(+), RedeTorrent(+), VacaTorrent(+). (This addon was made based on Torrentio, all credits are to its creator).",
+        "logo": "https://i.imgur.com/KVpfrAk.png",
+        "background": "https://i.imgur.com/QnbEGow.png",
+        "types": [
+          "movie",
+          "series",
+          "anime",
+          "other"
+        ],
+        "resources": [
+          {
+            "name": "stream",
+            "types": [
+              "movie",
+              "series",
+              "anime"
+            ],
+            "idPrefixes": [
+              "tt",
+              "kitsu"
+            ]
+          }
+        ],
+        "idPrefixes": null,
+        "catalogs": [],
+        "addonCatalogs": [],
+        "behaviorHints": {
+          "adult": false,
+          "p2p": true,
+          "configurable": true,
+          "configurationRequired": false
+        }
+      },
+      "flags": {
+        "official": false,
+        "protected": false
+      }
+    },
+    {
+      "transportUrl": "https://msubtitles.lowlevel1989.click/conf/api/v1/manifest.json",
+      "transportName": "",
+      "manifest": {
+        "id": "lowlevel.subtitles",
+        "version": "1.8.2",
+        "name": "MSubtitles",
+        "contactEmail": null,
+        "description": "MSubtitles is an add-on that allows you to manage your subtitles or follow the subtitles of other users completely free of charge.",
+        "logo": "https://lowlevel-1989.github.io/manage-subtitles-static/seo/images/logo-256x.png",
+        "background": null,
+        "types": [
+          "movie",
+          "series"
+        ],
+        "resources": [
+          "subtitles"
+        ],
+        "idPrefixes": null,
+        "catalogs": [],
+        "addonCatalogs": [],
+        "behaviorHints": {
+          "adult": false,
+          "p2p": false,
+          "configurable": true,
+          "configurationRequired": false
+        }
+      },
+      "flags": {
+        "official": false,
+        "protected": false
+      }
+    },
+    {
+      "transportUrl": "https://opensubtitlesv3-pro.dexter21767.com/eyJsYW5ncyI6WyJlbmdsaXNoIiwiaGVicmV3Il0sInNvdXJjZSI6ImFsbCIsImFpVHJhbnNsYXRlZCI6dHJ1ZSwiYXV0b0FkanVzdG1lbnQiOnRydWV9/manifest.json",
+      "transportName": "",
+      "manifest": {
+        "id": "community.opensubtitlesv3.pro",
+        "version": "0.1.0",
+        "name": "opensubtitles PRO",
+        "contactEmail": "dexter21767@gmail.com",
+        "description": "ad-free and spam-free subtitles addon",
+        "logo": "https://i.imgur.com/cGc1DXB.png",
+        "background": "https://github.com/Stremio/stremio-art/raw/main/originals/reiphantomhive1.png",
+        "types": [
+          "movie",
+          "series"
+        ],
+        "resources": [
+          "subtitles"
+        ],
+        "idPrefixes": [
+          "tt",
+          "kitsu"
+        ],
+        "catalogs": [],
+        "addonCatalogs": [],
+        "behaviorHints": {
+          "adult": false,
+          "p2p": false,
+          "configurable": true,
+          "configurationRequired": false
+        }
+      },
+      "flags": {
+        "official": false,
+        "protected": false
+      }
+    },
+    {
+      "transportUrl": "https://opensubtitles-v3.strem.io/manifest.json",
+      "transportName": "",
+      "manifest": {
+        "id": "org.stremio.opensubtitlesv3",
+        "version": "1.0.0",
+        "name": "OpenSubtitles v3",
+        "contactEmail": null,
+        "description": "OpenSubtitles v3 Addon for Stremio",
+        "logo": "http://www.strem.io/images/addons/opensubtitles-logo.png",
+        "background": null,
+        "types": [
+          "movie",
+          "series"
+        ],
+        "resources": [
+          "subtitles"
+        ],
+        "idPrefixes": [
+          "tt"
+        ],
+        "catalogs": [],
+        "addonCatalogs": [],
+        "behaviorHints": {
+          "adult": false,
+          "p2p": false,
+          "configurable": false,
+          "configurationRequired": false
+        }
+      },
+      "flags": {
+        "official": true,
+        "protected": false
+      }
+    },
+    {
+      "transportUrl": "https://7a82163c306e-stremio-netflix-catalog-addon.baby-beamup.club/manifest.json",
+      "transportName": "",
+      "manifest": {
+        "id": "pw.ers.netflix-catalog",
+        "logo": "https://play-lh.googleusercontent.com/TBRwjS_qfJCSj1m7zZB93FnpJM5fSpMA_wUlFDLxWAb45T9RmwBvQd5cWR5viJJOhkI",
+        "version": "1.1.1",
+        "name": "Streaming Catalogs",
+        "description": "Trending movies and series on Netflix, HBO Max, Disney+, Apple TV+ and more. Configure to choose your favourite services.",
+        "catalogs": [
+          {
+            "id": "nfx",
+            "type": "movie",
+            "name": "Netflix"
+          },
+          {
+            "id": "nfx",
+            "type": "series",
+            "name": "Netflix"
+          },
+          {
+            "id": "hbm",
+            "type": "movie",
+            "name": "HBO Max"
+          },
+          {
+            "id": "hbm",
+            "type": "series",
+            "name": "HBO Max"
+          },
+          {
+            "id": "dnp",
+            "type": "movie",
+            "name": "Disney+"
+          },
+          {
+            "id": "dnp",
+            "type": "series",
+            "name": "Disney+"
+          },
+          {
+            "id": "amp",
+            "type": "movie",
+            "name": "Prime  Video"
+          },
+          {
+            "id": "amp",
+            "type": "series",
+            "name": "Prime Video"
+          },
+          {
+            "id": "atp",
+            "type": "movie",
+            "name": "Apple TV+"
+          },
+          {
+            "id": "atp",
+            "type": "series",
+            "name": "Apple TV+"
+          }
+        ],
+        "resources": [
+          "catalog"
+        ],
+        "types": [
+          "movie",
+          "series"
+        ],
+        "idPrefixes": [
+          "tt"
+        ],
+        "behaviorHints": {
+          "configurable": true
+        }
+      },
+      "flags": {}
+    },
+    {
+      "transportUrl": "https://61ab9c85a149-tmdb-collections.baby-beamup.club/manifest.json",
+      "transportName": "",
+      "manifest": {
+        "id": "org.stremio.tmdbcollections",
+        "version": "2.2.1",
+        "name": "TMDB Collections",
+        "description": "Addon lets you explore TMDB Collections, which are essentially grouped movie series. Discover collections featuring newly released movies or browse catalogs of popular and top-rated collections. You can filter by genre or search collections by actor, director, writer, movie or collection name in any language.",
+        "types": [
+          "movie",
+          "collections"
+        ],
+        "resources": [
+          "catalog",
+          {
+            "name": "meta",
+            "types": [
+              "movie"
+            ],
+            "idPrefixes": [
+              "ctmdb."
+            ]
+          },
+          {
+            "name": "stream",
+            "types": [
+              "movie"
+            ],
+            "idPrefixes": [
+              "tt"
+            ]
+          }
+        ],
+        "idPrefixes": [
+          "ctmdb."
+        ],
+        "behaviorHints": {
+          "configurable": true
+        },
+        "favicon": "https://github.com/youchi1/tmdb-collections/raw/main/Images/favicon.png",
+        "logo": "https://github.com/youchi1/tmdb-collections/raw/main/Images/logo.png",
+        "background": "https://github.com/youchi1/tmdb-collections/raw/main/Images/bg.png",
+        "catalogs": [
+          {
+            "type": "collections",
+            "id": "ctmdb.popular",
+            "name": "Popular",
+            "extra": [
+              {
+                "name": "genre",
+                "isRequired": false,
+                "options": [
+                  "Action",
+                  "Adventure",
+                  "Animation",
+                  "Comedy",
+                  "Crime",
+                  "Documentary",
+                  "Drama",
+                  "Family",
+                  "Fantasy",
+                  "History",
+                  "Horror",
+                  "Music",
+                  "Mystery",
+                  "Romance",
+                  "Science Fiction",
+                  "TV Movie",
+                  "Thriller",
+                  "War",
+                  "Western"
+                ],
+                "genres": [
+                  {
+                    "id": 28,
+                    "name": "Action"
+                  },
+                  {
+                    "id": 12,
+                    "name": "Adventure"
+                  },
+                  {
+                    "id": 16,
+                    "name": "Animation"
+                  },
+                  {
+                    "id": 35,
+                    "name": "Comedy"
+                  },
+                  {
+                    "id": 80,
+                    "name": "Crime"
+                  },
+                  {
+                    "id": 99,
+                    "name": "Documentary"
+                  },
+                  {
+                    "id": 18,
+                    "name": "Drama"
+                  },
+                  {
+                    "id": 10751,
+                    "name": "Family"
+                  },
+                  {
+                    "id": 14,
+                    "name": "Fantasy"
+                  },
+                  {
+                    "id": 36,
+                    "name": "History"
+                  },
+                  {
+                    "id": 27,
+                    "name": "Horror"
+                  },
+                  {
+                    "id": 10402,
+                    "name": "Music"
+                  },
+                  {
+                    "id": 9648,
+                    "name": "Mystery"
+                  },
+                  {
+                    "id": 10749,
+                    "name": "Romance"
+                  },
+                  {
+                    "id": 878,
+                    "name": "Science Fiction"
+                  },
+                  {
+                    "id": 10770,
+                    "name": "TV Movie"
+                  },
+                  {
+                    "id": 53,
+                    "name": "Thriller"
+                  },
+                  {
+                    "id": 10752,
+                    "name": "War"
+                  },
+                  {
+                    "id": 37,
+                    "name": "Western"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "collections",
+            "id": "ctmdb.topRated",
+            "name": "Top Rated",
+            "extra": [
+              {
+                "name": "genre",
+                "isRequired": false,
+                "options": [
+                  "Action",
+                  "Adventure",
+                  "Animation",
+                  "Comedy",
+                  "Crime",
+                  "Documentary",
+                  "Drama",
+                  "Family",
+                  "Fantasy",
+                  "History",
+                  "Horror",
+                  "Music",
+                  "Mystery",
+                  "Romance",
+                  "Science Fiction",
+                  "TV Movie",
+                  "Thriller",
+                  "War",
+                  "Western"
+                ],
+                "genres": [
+                  {
+                    "id": 28,
+                    "name": "Action"
+                  },
+                  {
+                    "id": 12,
+                    "name": "Adventure"
+                  },
+                  {
+                    "id": 16,
+                    "name": "Animation"
+                  },
+                  {
+                    "id": 35,
+                    "name": "Comedy"
+                  },
+                  {
+                    "id": 80,
+                    "name": "Crime"
+                  },
+                  {
+                    "id": 99,
+                    "name": "Documentary"
+                  },
+                  {
+                    "id": 18,
+                    "name": "Drama"
+                  },
+                  {
+                    "id": 10751,
+                    "name": "Family"
+                  },
+                  {
+                    "id": 14,
+                    "name": "Fantasy"
+                  },
+                  {
+                    "id": 36,
+                    "name": "History"
+                  },
+                  {
+                    "id": 27,
+                    "name": "Horror"
+                  },
+                  {
+                    "id": 10402,
+                    "name": "Music"
+                  },
+                  {
+                    "id": 9648,
+                    "name": "Mystery"
+                  },
+                  {
+                    "id": 10749,
+                    "name": "Romance"
+                  },
+                  {
+                    "id": 878,
+                    "name": "Science Fiction"
+                  },
+                  {
+                    "id": 10770,
+                    "name": "TV Movie"
+                  },
+                  {
+                    "id": 53,
+                    "name": "Thriller"
+                  },
+                  {
+                    "id": 10752,
+                    "name": "War"
+                  },
+                  {
+                    "id": 37,
+                    "name": "Western"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "collections",
+            "id": "ctmdb.newReleases",
+            "name": "New Releases",
+            "extra": [
+              {
+                "name": "genre",
+                "isRequired": false,
+                "options": [
+                  "Action",
+                  "Adventure",
+                  "Animation",
+                  "Comedy",
+                  "Crime",
+                  "Documentary",
+                  "Drama",
+                  "Family",
+                  "Fantasy",
+                  "History",
+                  "Horror",
+                  "Music",
+                  "Mystery",
+                  "Romance",
+                  "Science Fiction",
+                  "TV Movie",
+                  "Thriller",
+                  "War",
+                  "Western"
+                ],
+                "genres": [
+                  {
+                    "id": 28,
+                    "name": "Action"
+                  },
+                  {
+                    "id": 12,
+                    "name": "Adventure"
+                  },
+                  {
+                    "id": 16,
+                    "name": "Animation"
+                  },
+                  {
+                    "id": 35,
+                    "name": "Comedy"
+                  },
+                  {
+                    "id": 80,
+                    "name": "Crime"
+                  },
+                  {
+                    "id": 99,
+                    "name": "Documentary"
+                  },
+                  {
+                    "id": 18,
+                    "name": "Drama"
+                  },
+                  {
+                    "id": 10751,
+                    "name": "Family"
+                  },
+                  {
+                    "id": 14,
+                    "name": "Fantasy"
+                  },
+                  {
+                    "id": 36,
+                    "name": "History"
+                  },
+                  {
+                    "id": 27,
+                    "name": "Horror"
+                  },
+                  {
+                    "id": 10402,
+                    "name": "Music"
+                  },
+                  {
+                    "id": 9648,
+                    "name": "Mystery"
+                  },
+                  {
+                    "id": 10749,
+                    "name": "Romance"
+                  },
+                  {
+                    "id": 878,
+                    "name": "Science Fiction"
+                  },
+                  {
+                    "id": 10770,
+                    "name": "TV Movie"
+                  },
+                  {
+                    "id": 53,
+                    "name": "Thriller"
+                  },
+                  {
+                    "id": 10752,
+                    "name": "War"
+                  },
+                  {
+                    "id": 37,
+                    "name": "Western"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "collections",
+            "id": "ctmdb.topRatedByCountry",
+            "name": "Top Rated By Country",
+            "extra": [
+              {
+                "name": "genre",
+                "isRequired": true,
+                "options": [
+                  "United States",
+                  "United Kingdom",
+                  "France",
+                  "China",
+                  "India",
+                  "Germany",
+                  "Japan",
+                  "Italy",
+                  "South Korea",
+                  "Spain",
+                  "Canada",
+                  "Russia",
+                  "Turkey",
+                  "Australia",
+                  "Argentina",
+                  "Brazil",
+                  "Mexico",
+                  "Netherlands",
+                  "Hong Kong SAR China",
+                  "Czech Republic",
+                  "Poland",
+                  "Sweden",
+                  "Switzerland",
+                  "New Zealand",
+                  "Norway",
+                  "Portugal",
+                  "Romania",
+                  "Israel",
+                  "South Africa",
+                  "Slovakia",
+                  "Ukraine"
+                ],
+                "genres": [
+                  {
+                    "id": "US",
+                    "name": "United States",
+                    "english_name": "United States of America"
+                  },
+                  {
+                    "id": "GB",
+                    "name": "United Kingdom",
+                    "english_name": "United Kingdom"
+                  },
+                  {
+                    "id": "FR",
+                    "name": "France",
+                    "english_name": "France"
+                  },
+                  {
+                    "id": "CN",
+                    "name": "China",
+                    "english_name": "China"
+                  },
+                  {
+                    "id": "IN",
+                    "name": "India",
+                    "english_name": "India"
+                  },
+                  {
+                    "id": "DE",
+                    "name": "Germany",
+                    "english_name": "Germany"
+                  },
+                  {
+                    "id": "JP",
+                    "name": "Japan",
+                    "english_name": "Japan"
+                  },
+                  {
+                    "id": "IT",
+                    "name": "Italy",
+                    "english_name": "Italy"
+                  },
+                  {
+                    "id": "KR",
+                    "name": "South Korea",
+                    "english_name": "South Korea"
+                  },
+                  {
+                    "id": "ES",
+                    "name": "Spain",
+                    "english_name": "Spain"
+                  },
+                  {
+                    "id": "CA",
+                    "name": "Canada",
+                    "english_name": "Canada"
+                  },
+                  {
+                    "id": "RU",
+                    "name": "Russia",
+                    "english_name": "Russia"
+                  },
+                  {
+                    "id": "TR",
+                    "name": "Turkey",
+                    "english_name": "Turkey"
+                  },
+                  {
+                    "id": "AU",
+                    "name": "Australia",
+                    "english_name": "Australia"
+                  },
+                  {
+                    "id": "AR",
+                    "name": "Argentina",
+                    "english_name": "Argentina"
+                  },
+                  {
+                    "id": "BR",
+                    "name": "Brazil",
+                    "english_name": "Brazil"
+                  },
+                  {
+                    "id": "MX",
+                    "name": "Mexico",
+                    "english_name": "Mexico"
+                  },
+                  {
+                    "id": "NL",
+                    "name": "Netherlands",
+                    "english_name": "Netherlands"
+                  },
+                  {
+                    "id": "HK",
+                    "name": "Hong Kong SAR China",
+                    "english_name": "Hong Kong"
+                  },
+                  {
+                    "id": "CZ",
+                    "name": "Czech Republic",
+                    "english_name": "Czech Republic"
+                  },
+                  {
+                    "id": "PL",
+                    "name": "Poland",
+                    "english_name": "Poland"
+                  },
+                  {
+                    "id": "SE",
+                    "name": "Sweden",
+                    "english_name": "Sweden"
+                  },
+                  {
+                    "id": "CH",
+                    "name": "Switzerland",
+                    "english_name": "Switzerland"
+                  },
+                  {
+                    "id": "NZ",
+                    "name": "New Zealand",
+                    "english_name": "New Zealand"
+                  },
+                  {
+                    "id": "NO",
+                    "name": "Norway",
+                    "english_name": "Norway"
+                  },
+                  {
+                    "id": "PT",
+                    "name": "Portugal",
+                    "english_name": "Portugal"
+                  },
+                  {
+                    "id": "RO",
+                    "name": "Romania",
+                    "english_name": "Romania"
+                  },
+                  {
+                    "id": "IL",
+                    "name": "Israel",
+                    "english_name": "Israel"
+                  },
+                  {
+                    "id": "ZA",
+                    "name": "South Africa",
+                    "english_name": "South Africa"
+                  },
+                  {
+                    "id": "SK",
+                    "name": "Slovakia",
+                    "english_name": "Slovakia"
+                  },
+                  {
+                    "id": "UA",
+                    "name": "Ukraine",
+                    "english_name": "Ukraine"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "collections",
+            "id": "ctmdb.topRatedByCompany",
+            "name": "Top Rated By Company",
+            "extra": [
+              {
+                "name": "genre",
+                "isRequired": true,
+                "options": [
+                  "Walt Disney Studios",
+                  "Metro-Goldwyn-Mayer Studios",
+                  "Paramount Pictures",
+                  "Columbia Pictures",
+                  "Universal Pictures",
+                  "Warner Bros. Pictures",
+                  "Lionsgate",
+                  "20th Century Studios",
+                  "Amazon MGM Studios",
+                  "Sony Pictures Entertainment",
+                  "DreamWorks Pictures",
+                  "New Line Cinema",
+                  "Focus Features",
+                  "Summit Entertainment",
+                  "The Weinstein Company",
+                  "Marvel Studios",
+                  "DC Studios",
+                  "Toei Animation",
+                  "SUNRISE",
+                  "Studio Pierrot",
+                  "Pierrot",
+                  "Madhouse",
+                  "Studio Ghibli"
+                ],
+                "genres": [
+                  {
+                    "id": "2 | 6125 | 158526",
+                    "name": "Walt Disney Studios",
+                    "vote_count": 50
+                  },
+                  {
+                    "id": "21",
+                    "name": "Metro-Goldwyn-Mayer Studios",
+                    "vote_count": 50
+                  },
+                  {
+                    "id": "4",
+                    "name": "Paramount Pictures",
+                    "vote_count": 50
+                  },
+                  {
+                    "id": "5",
+                    "name": "Columbia Pictures",
+                    "vote_count": 50
+                  },
+                  {
+                    "id": "33 | 5726",
+                    "name": "Universal Pictures",
+                    "vote_count": 50
+                  },
+                  {
+                    "id": "174",
+                    "name": "Warner Bros. Pictures",
+                    "vote_count": 50
+                  },
+                  {
+                    "id": "1632 | 85885",
+                    "name": "Lionsgate",
+                    "vote_count": 50
+                  },
+                  {
+                    "id": "25 | 127928 | 11749",
+                    "name": "20th Century Studios",
+                    "vote_count": 50
+                  },
+                  {
+                    "id": "210099",
+                    "name": "Amazon MGM Studios",
+                    "vote_count": 5
+                  },
+                  {
+                    "id": "34 | 2251 | 5388 | 63520",
+                    "name": "Sony Pictures Entertainment",
+                    "vote_count": 10
+                  },
+                  {
+                    "id": "7 | 521",
+                    "name": "DreamWorks Pictures",
+                    "vote_count": 5
+                  },
+                  {
+                    "id": "12",
+                    "name": "New Line Cinema",
+                    "vote_count": 10
+                  },
+                  {
+                    "id": "10146",
+                    "name": "Focus Features",
+                    "vote_count": 10
+                  },
+                  {
+                    "id": "491",
+                    "name": "Summit Entertainment",
+                    "vote_count": 10
+                  },
+                  {
+                    "id": "308",
+                    "name": "The Weinstein Company",
+                    "vote_count": 10
+                  },
+                  {
+                    "id": "420 | 43",
+                    "name": "Marvel Studios",
+                    "vote_count": 10
+                  },
+                  {
+                    "id": "9993 | 429",
+                    "name": "DC Studios",
+                    "vote_count": 10
+                  },
+                  {
+                    "id": "5542",
+                    "name": "Toei Animation",
+                    "vote_count": 10
+                  },
+                  {
+                    "id": "3153",
+                    "name": "SUNRISE",
+                    "vote_count": 10
+                  },
+                  {
+                    "id": "3234",
+                    "name": "Studio Pierrot",
+                    "vote_count": 10
+                  },
+                  {
+                    "id": "3234",
+                    "name": "Pierrot",
+                    "vote_count": 10
+                  },
+                  {
+                    "id": "3464",
+                    "name": "Madhouse",
+                    "vote_count": 10
+                  },
+                  {
+                    "id": "10342",
+                    "name": "Studio Ghibli",
+                    "vote_count": 0
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "collections",
+            "id": "ctmdb.search",
+            "name": "Search",
+            "extra": [
+              {
+                "name": "search",
+                "isRequired": true,
+                "genres": [
+                  {
+                    "id": 28,
+                    "name": "Action"
+                  },
+                  {
+                    "id": 12,
+                    "name": "Adventure"
+                  },
+                  {
+                    "id": 16,
+                    "name": "Animation"
+                  },
+                  {
+                    "id": 35,
+                    "name": "Comedy"
+                  },
+                  {
+                    "id": 80,
+                    "name": "Crime"
+                  },
+                  {
+                    "id": 99,
+                    "name": "Documentary"
+                  },
+                  {
+                    "id": 18,
+                    "name": "Drama"
+                  },
+                  {
+                    "id": 10751,
+                    "name": "Family"
+                  },
+                  {
+                    "id": 14,
+                    "name": "Fantasy"
+                  },
+                  {
+                    "id": 36,
+                    "name": "History"
+                  },
+                  {
+                    "id": 27,
+                    "name": "Horror"
+                  },
+                  {
+                    "id": 10402,
+                    "name": "Music"
+                  },
+                  {
+                    "id": 9648,
+                    "name": "Mystery"
+                  },
+                  {
+                    "id": 10749,
+                    "name": "Romance"
+                  },
+                  {
+                    "id": 878,
+                    "name": "Science Fiction"
+                  },
+                  {
+                    "id": 10770,
+                    "name": "TV Movie"
+                  },
+                  {
+                    "id": 53,
+                    "name": "Thriller"
+                  },
+                  {
+                    "id": 10752,
+                    "name": "War"
+                  },
+                  {
+                    "id": 37,
+                    "name": "Western"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "genres": [
+          {
+            "id": 28,
+            "name": "Action"
+          },
+          {
+            "id": 12,
+            "name": "Adventure"
+          },
+          {
+            "id": 16,
+            "name": "Animation"
+          },
+          {
+            "id": 35,
+            "name": "Comedy"
+          },
+          {
+            "id": 80,
+            "name": "Crime"
+          },
+          {
+            "id": 99,
+            "name": "Documentary"
+          },
+          {
+            "id": 18,
+            "name": "Drama"
+          },
+          {
+            "id": 10751,
+            "name": "Family"
+          },
+          {
+            "id": 14,
+            "name": "Fantasy"
+          },
+          {
+            "id": 36,
+            "name": "History"
+          },
+          {
+            "id": 27,
+            "name": "Horror"
+          },
+          {
+            "id": 10402,
+            "name": "Music"
+          },
+          {
+            "id": 9648,
+            "name": "Mystery"
+          },
+          {
+            "id": 10749,
+            "name": "Romance"
+          },
+          {
+            "id": 878,
+            "name": "Science Fiction"
+          },
+          {
+            "id": 10770,
+            "name": "TV Movie"
+          },
+          {
+            "id": 53,
+            "name": "Thriller"
+          },
+          {
+            "id": 10752,
+            "name": "War"
+          },
+          {
+            "id": 37,
+            "name": "Western"
+          }
+        ]
+      },
+      "flags": {}
+    },
+    {
+      "transportUrl": "https://5c338d22c948-ott-catalog.baby-beamup.club/manifest.json",
+      "transportName": "",
+      "manifest": {
+        "id": "community.OTTCatalog",
+        "version": "0.0.1",
+        "catalogs": [
+          {
+            "type": "movie",
+            "id": "top"
+          }
+        ],
+        "resources": [
+          "catalog",
+          "meta"
+        ],
+        "types": [
+          "movie",
+          "series"
+        ],
+        "name": "OTTCatalog",
+        "description": "Catalog of movies and tv shows of various OTT platform like Netflix, Amazon Prime, Disney+ Hotstar etc"
+      },
+      "flags": {}
+    },
+    {
+      "transportUrl": "https://anime-kitsu.strem.fun/manifest.json",
+      "transportName": "",
+      "manifest": {
+        "id": "community.anime.kitsu",
+        "version": "0.0.10",
+        "name": "Anime Kitsu",
+        "description": "Unofficial Kitsu.io anime catalog addon",
+        "logo": "https://i.imgur.com/7N6XGoO.png",
+        "background": "https://i.imgur.com/ym4n96o.png",
+        "resources": [
+          "catalog",
+          "meta",
+          "subtitles"
+        ],
+        "types": [
+          "anime",
+          "movie",
+          "series"
+        ],
+        "catalogs": [
+          {
+            "id": "kitsu-anime-trending",
+            "name": "Kitsu Trending",
+            "type": "anime"
+          },
+          {
+            "id": "kitsu-anime-airing",
+            "name": "Kitsu Top Airing",
+            "type": "anime",
+            "extra": [
+              {
+                "name": "genre",
+                "options": [
+                  "Action",
+                  "Adventure",
+                  "Comedy",
+                  "Drama",
+                  "Sci-Fi",
+                  "Space",
+                  "Mystery",
+                  "Magic",
+                  "Supernatural",
+                  "Police",
+                  "Fantasy",
+                  "Sports",
+                  "Romance",
+                  "Cars",
+                  "Slice of Life",
+                  "Racing",
+                  "Horror",
+                  "Psychological",
+                  "Thriller",
+                  "Martial Arts",
+                  "Super Power",
+                  "School",
+                  "Ecchi",
+                  "Vampire",
+                  "Historical",
+                  "Military",
+                  "Dementia",
+                  "Mecha",
+                  "Demons",
+                  "Samurai",
+                  "Harem",
+                  "Music",
+                  "Parody",
+                  "Shoujo Ai",
+                  "Game",
+                  "Shounen Ai",
+                  "Kids",
+                  "Hentai",
+                  "Yuri",
+                  "Yaoi",
+                  "Anime Influenced",
+                  "Gender Bender",
+                  "Doujinshi",
+                  "Mahou Shoujo",
+                  "Mahou Shounen",
+                  "Gore",
+                  "Law",
+                  "Cooking",
+                  "Mature",
+                  "Medical",
+                  "Political",
+                  "Tokusatsu",
+                  "Youth",
+                  "Workplace",
+                  "Crime",
+                  "Zombies",
+                  "Documentary",
+                  "Family",
+                  "Food",
+                  "Friendship",
+                  "Tragedy"
+                ]
+              },
+              {
+                "name": "skip"
+              }
+            ],
+            "genres": [
+              "Action",
+              "Adventure",
+              "Comedy",
+              "Drama",
+              "Sci-Fi",
+              "Space",
+              "Mystery",
+              "Magic",
+              "Supernatural",
+              "Police",
+              "Fantasy",
+              "Sports",
+              "Romance",
+              "Cars",
+              "Slice of Life",
+              "Racing",
+              "Horror",
+              "Psychological",
+              "Thriller",
+              "Martial Arts",
+              "Super Power",
+              "School",
+              "Ecchi",
+              "Vampire",
+              "Historical",
+              "Military",
+              "Dementia",
+              "Mecha",
+              "Demons",
+              "Samurai",
+              "Harem",
+              "Music",
+              "Parody",
+              "Shoujo Ai",
+              "Game",
+              "Shounen Ai",
+              "Kids",
+              "Hentai",
+              "Yuri",
+              "Yaoi",
+              "Anime Influenced",
+              "Gender Bender",
+              "Doujinshi",
+              "Mahou Shoujo",
+              "Mahou Shounen",
+              "Gore",
+              "Law",
+              "Cooking",
+              "Mature",
+              "Medical",
+              "Political",
+              "Tokusatsu",
+              "Youth",
+              "Workplace",
+              "Crime",
+              "Zombies",
+              "Documentary",
+              "Family",
+              "Food",
+              "Friendship",
+              "Tragedy"
+            ]
+          },
+          {
+            "id": "kitsu-anime-popular",
+            "name": "Kitsu Most Popular",
+            "type": "anime",
+            "extra": [
+              {
+                "name": "genre",
+                "options": [
+                  "Action",
+                  "Adventure",
+                  "Comedy",
+                  "Drama",
+                  "Sci-Fi",
+                  "Space",
+                  "Mystery",
+                  "Magic",
+                  "Supernatural",
+                  "Police",
+                  "Fantasy",
+                  "Sports",
+                  "Romance",
+                  "Cars",
+                  "Slice of Life",
+                  "Racing",
+                  "Horror",
+                  "Psychological",
+                  "Thriller",
+                  "Martial Arts",
+                  "Super Power",
+                  "School",
+                  "Ecchi",
+                  "Vampire",
+                  "Historical",
+                  "Military",
+                  "Dementia",
+                  "Mecha",
+                  "Demons",
+                  "Samurai",
+                  "Harem",
+                  "Music",
+                  "Parody",
+                  "Shoujo Ai",
+                  "Game",
+                  "Shounen Ai",
+                  "Kids",
+                  "Hentai",
+                  "Yuri",
+                  "Yaoi",
+                  "Anime Influenced",
+                  "Gender Bender",
+                  "Doujinshi",
+                  "Mahou Shoujo",
+                  "Mahou Shounen",
+                  "Gore",
+                  "Law",
+                  "Cooking",
+                  "Mature",
+                  "Medical",
+                  "Political",
+                  "Tokusatsu",
+                  "Youth",
+                  "Workplace",
+                  "Crime",
+                  "Zombies",
+                  "Documentary",
+                  "Family",
+                  "Food",
+                  "Friendship",
+                  "Tragedy"
+                ]
+              },
+              {
+                "name": "skip"
+              }
+            ],
+            "genres": [
+              "Action",
+              "Adventure",
+              "Comedy",
+              "Drama",
+              "Sci-Fi",
+              "Space",
+              "Mystery",
+              "Magic",
+              "Supernatural",
+              "Police",
+              "Fantasy",
+              "Sports",
+              "Romance",
+              "Cars",
+              "Slice of Life",
+              "Racing",
+              "Horror",
+              "Psychological",
+              "Thriller",
+              "Martial Arts",
+              "Super Power",
+              "School",
+              "Ecchi",
+              "Vampire",
+              "Historical",
+              "Military",
+              "Dementia",
+              "Mecha",
+              "Demons",
+              "Samurai",
+              "Harem",
+              "Music",
+              "Parody",
+              "Shoujo Ai",
+              "Game",
+              "Shounen Ai",
+              "Kids",
+              "Hentai",
+              "Yuri",
+              "Yaoi",
+              "Anime Influenced",
+              "Gender Bender",
+              "Doujinshi",
+              "Mahou Shoujo",
+              "Mahou Shounen",
+              "Gore",
+              "Law",
+              "Cooking",
+              "Mature",
+              "Medical",
+              "Political",
+              "Tokusatsu",
+              "Youth",
+              "Workplace",
+              "Crime",
+              "Zombies",
+              "Documentary",
+              "Family",
+              "Food",
+              "Friendship",
+              "Tragedy"
+            ]
+          },
+          {
+            "id": "kitsu-anime-rating",
+            "name": "Kitsu Highest Rated",
+            "type": "anime",
+            "extra": [
+              {
+                "name": "genre",
+                "options": [
+                  "Action",
+                  "Adventure",
+                  "Comedy",
+                  "Drama",
+                  "Sci-Fi",
+                  "Space",
+                  "Mystery",
+                  "Magic",
+                  "Supernatural",
+                  "Police",
+                  "Fantasy",
+                  "Sports",
+                  "Romance",
+                  "Cars",
+                  "Slice of Life",
+                  "Racing",
+                  "Horror",
+                  "Psychological",
+                  "Thriller",
+                  "Martial Arts",
+                  "Super Power",
+                  "School",
+                  "Ecchi",
+                  "Vampire",
+                  "Historical",
+                  "Military",
+                  "Dementia",
+                  "Mecha",
+                  "Demons",
+                  "Samurai",
+                  "Harem",
+                  "Music",
+                  "Parody",
+                  "Shoujo Ai",
+                  "Game",
+                  "Shounen Ai",
+                  "Kids",
+                  "Hentai",
+                  "Yuri",
+                  "Yaoi",
+                  "Anime Influenced",
+                  "Gender Bender",
+                  "Doujinshi",
+                  "Mahou Shoujo",
+                  "Mahou Shounen",
+                  "Gore",
+                  "Law",
+                  "Cooking",
+                  "Mature",
+                  "Medical",
+                  "Political",
+                  "Tokusatsu",
+                  "Youth",
+                  "Workplace",
+                  "Crime",
+                  "Zombies",
+                  "Documentary",
+                  "Family",
+                  "Food",
+                  "Friendship",
+                  "Tragedy"
+                ]
+              },
+              {
+                "name": "skip"
+              }
+            ],
+            "genres": [
+              "Action",
+              "Adventure",
+              "Comedy",
+              "Drama",
+              "Sci-Fi",
+              "Space",
+              "Mystery",
+              "Magic",
+              "Supernatural",
+              "Police",
+              "Fantasy",
+              "Sports",
+              "Romance",
+              "Cars",
+              "Slice of Life",
+              "Racing",
+              "Horror",
+              "Psychological",
+              "Thriller",
+              "Martial Arts",
+              "Super Power",
+              "School",
+              "Ecchi",
+              "Vampire",
+              "Historical",
+              "Military",
+              "Dementia",
+              "Mecha",
+              "Demons",
+              "Samurai",
+              "Harem",
+              "Music",
+              "Parody",
+              "Shoujo Ai",
+              "Game",
+              "Shounen Ai",
+              "Kids",
+              "Hentai",
+              "Yuri",
+              "Yaoi",
+              "Anime Influenced",
+              "Gender Bender",
+              "Doujinshi",
+              "Mahou Shoujo",
+              "Mahou Shounen",
+              "Gore",
+              "Law",
+              "Cooking",
+              "Mature",
+              "Medical",
+              "Political",
+              "Tokusatsu",
+              "Youth",
+              "Workplace",
+              "Crime",
+              "Zombies",
+              "Documentary",
+              "Family",
+              "Food",
+              "Friendship",
+              "Tragedy"
+            ]
+          },
+          {
+            "id": "kitsu-anime-list",
+            "name": "Kitsu",
+            "type": "anime",
+            "extra": [
+              {
+                "name": "search",
+                "isRequired": true
+              },
+              {
+                "name": "lastVideosIds",
+                "isRequired": false,
+                "optionsLimit": 20
+              },
+              {
+                "name": "skip"
+              }
+            ]
+          }
+        ],
+        "idPrefixes": [
+          "kitsu",
+          "mal",
+          "anilist",
+          "anidb"
+        ]
+      },
+      "flags": {}
+    },
+    {
+      "transportUrl": "https://stremio-cast-search.onrender.com/manifest.json",
+      "transportName": "",
+      "manifest": {
+        "id": "org.community.cast-search",
+        "version": "1.0.0",
+        "name": "Cast Search",
+        "description": "Makes cast members clickable and searchable on Android TV",
+        "types": [
+          "movie",
+          "series"
+        ],
+        "resources": [
+          "stream"
+        ],
+        "catalogs": [],
+        "idPrefixes": [
+          "tt"
+        ],
+        "behaviorHints": {
+          "configurable": true,
+          "configurationRequired": false
+        },
+        "config": [
+          {
+            "key": "premiumKey",
+            "type": "text",
+            "title": "Premium Access Key",
+            "description": "Enter your premium key to unlock all cast members",
+            "required": false
+          }
+        ]
+      },
+      "flags": {}
+    },
+    {
+      "transportUrl": "https://stremio-ratings-v3-production.up.railway.app/manifest.json",
+      "transportName": "",
+      "manifest": {
+        "id": "imdb.ratings.local",
+        "version": "1.0.0",
+        "name": "IMDb Ratings",
+        "logo": "https://raw.githubusercontent.com/kgenovz/stremio-ratings-v3/main/logo.png",
+        "description": "Shows IMDb ratings for movies and individual TV episodes with a completely configurable format. Works with anime.",
+        "resources": [
+          "stream"
+        ],
+        "types": [
+          "movie",
+          "series"
+        ],
+        "catalogs": [],
+        "idPrefixes": [
+          "tt",
+          "kitsu",
+          "tmdb"
+        ],
+        "behaviorHints": {
+          "configurable": true,
+          "configurationRequired": false
+        }
+      },
+      "flags": {}
+    },
+    {
+      "transportUrl": "https://torrentio.strem.fun/manifest.json",
+      "transportName": "",
+      "manifest": {
+        "id": "com.stremio.torrentio.addon",
+        "version": "0.0.15",
+        "name": "Torrentio",
+        "description": "Provides torrent streams from scraped torrent providers. Currently supports YTS(+), EZTV(+), RARBG(+), 1337x(+), ThePirateBay(+), KickassTorrents(+), TorrentGalaxy(+), MagnetDL(+), HorribleSubs(+), NyaaSi(+), TokyoTosho(+), AniDex(+), nekoBT(+), Rutor(+), Rutracker(+), Comando(+), BluDV(+), MicoLeaoDublado(+), Torrent9(+), ilCorSaRoNeRo(+), MejorTorrent(+), Wolfmax4k(+), Cinecalidad(+), BestTorrents(+). To configure providers, RealDebrid/Premiumize/AllDebrid/DebridLink/EasyDebrid/Offcloud/TorBox/Put.io support and other settings visit https://torrentio.strem.fun",
+        "catalogs": [],
+        "resources": [
+          {
+            "name": "stream",
+            "types": [
+              "movie",
+              "series",
+              "anime"
+            ],
+            "idPrefixes": [
+              "tt",
+              "kitsu"
+            ]
+          }
+        ],
+        "types": [
+          "movie",
+          "series",
+          "anime",
+          "other"
+        ],
+        "background": "https://torrentio.strem.fun/images/background_v1.jpg",
+        "logo": "https://torrentio.strem.fun/images/logo_v1.png",
+        "behaviorHints": {
+          "configurable": true,
+          "configurationRequired": false
+        }
+      },
+      "flags": {}
+    },
+    {
+      "transportUrl": "https://stremio-addons.net/api/manifest.json",
+      "transportName": "",
+      "manifest": {
+        "id": "community.stremio.stremio-addons-dot-net",
+        "logo": "https://stremio-addons.net/img/web-app-manifest-192x192.png",
+        "version": "1.0.1",
+        "name": "stremio-addons.net",
+        "description": "Provides the Community Stremio Addons catalog from stremio-addons.net.",
+        "types": [
+          "movie",
+          "series",
+          "channel",
+          "tv"
+        ],
+        "resources": [
+          "addon_catalog"
+        ],
+        "catalogs": [],
+        "addonCatalogs": [
+          {
+            "type": "all",
+            "id": "stremio-addons.net",
+            "name": "stremio-addons.net"
+          }
+        ]
+      },
+      "flags": {}
+    },
+    {
+      "transportUrl": "https://meteorfortheweebs.midnightignite.me/stremio/manifest.json",
+      "transportName": "",
+      "manifest": {
+        "id": "community.meteor",
+        "version": "1.0.0",
+        "name": "Meteor",
+        "description": "Conservative, franchise-aware torrent matching.",
+        "logo": "https://meteorfortheweebs.midnightignite.me/logo.png?v=2118cbc8c8589771",
+        "resources": [
+          {
+            "name": "stream",
+            "types": [
+              "movie",
+              "series",
+              "anime"
+            ],
+            "idPrefixes": [
+              "tt",
+              "kitsu",
+              "anilist",
+              "anidb",
+              "mal"
+            ]
+          }
+        ],
+        "types": [
+          "movie",
+          "series",
+          "anime"
+        ],
+        "idPrefixes": [
+          "tt",
+          "kitsu",
+          "anilist",
+          "anidb",
+          "mal"
+        ],
+        "catalogs": [],
+        "behaviorHints": {
+          "configurable": true
+        }
+      },
+      "flags": {}
+    },
+    {
+      "transportUrl": "https://ytztvio.galacticcapsule.workers.dev/manifest.json",
+      "transportName": "",
+      "manifest": {
+        "id": "org.stremio.ytztvio",
+        "version": "1.1.0",
+        "name": "Ytztvio",
+        "description": "Stremio Wrapper for YTS and EZTV Torrents",
+        "logo": "https://yts.lt/assets/images/website/logo-YTS.svg",
+        "types": [
+          "movie",
+          "series"
+        ],
+        "resources": [
+          "stream"
+        ],
+        "catalogs": [],
+        "idPrefixes": [
+          "tt"
+        ],
+        "stremioAddonsConfig": {
+          "issuer": "https://stremio-addons.net",
+          "signature": "eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2In0..Txs5tysqS4q34uxPNyuORA.gc81qaoOqp84KGbXDHnKlv_QWFUMvaZYv34BdZQsay2vuFBEnmSlpBVl0uWQRaqZ7AWPUNRnA5zvNtgEyAmbp16ilybpgI-Ic5_Mh-nL7cEjTTxSENcgaC_cNPBddhNY.26MVNht0ZhcNRIMhQ6QuKw"
+        }
+      },
+      "flags": {}
+    },
+    {
+      "transportUrl": "https://1fe84bc728af-imdb-catalogs.baby-beamup.club/manifest.json",
+      "transportName": "",
+      "manifest": {
+        "id": "org.imdbcatalogs",
+        "version": "0.0.5",
+        "logo": "https://londonfeministfilmfestival.files.wordpress.com/2017/05/imdb-logo.png",
+        "name": "IMDB Catalogs",
+        "description": "IMDB Movie and Series lists. Supports optional settings to use Rating Posters from RPDB.",
+        "resources": [
+          "catalog"
+        ],
+        "types": [
+          "movie",
+          "series"
+        ],
+        "idPrefixes": [
+          "tt"
+        ],
+        "catalogs": [
+          {
+            "id": "imdb-movie-catalog",
+            "name": "IMDB",
+            "type": "movie",
+            "extra": [
+              {
+                "name": "genre",
+                "options": [
+                  "Anime",
+                  "Anti Hero",
+                  "Based on Book",
+                  "Based on Comic",
+                  "Based on Novel",
+                  "Black Comedy",
+                  "Business",
+                  "Chick Flick",
+                  "Conspiracy",
+                  "Corruption",
+                  "Criminal Mastermind",
+                  "Cult",
+                  "Cult Film",
+                  "Espionage",
+                  "Fairy Tale",
+                  "Femme Fatale",
+                  "Futuristic",
+                  "Heist",
+                  "High School",
+                  "Knight",
+                  "Kung Fu",
+                  "Medieval Times",
+                  "Murder",
+                  "Ninja",
+                  "One Man Army",
+                  "Organised Crime",
+                  "Parody",
+                  "Police Detective",
+                  "Psychopath",
+                  "Road Movie",
+                  "Robot",
+                  "Spirituality",
+                  "Superhero",
+                  "Time Travel",
+                  "Vampire",
+                  "Zombie"
+                ]
+              }
+            ],
+            "genres": [
+              "Anime",
+              "Anti Hero",
+              "Based on Book",
+              "Based on Comic",
+              "Based on Novel",
+              "Black Comedy",
+              "Business",
+              "Chick Flick",
+              "Conspiracy",
+              "Corruption",
+              "Criminal Mastermind",
+              "Cult",
+              "Cult Film",
+              "Espionage",
+              "Fairy Tale",
+              "Femme Fatale",
+              "Futuristic",
+              "Heist",
+              "High School",
+              "Knight",
+              "Kung Fu",
+              "Medieval Times",
+              "Murder",
+              "Ninja",
+              "One Man Army",
+              "Organised Crime",
+              "Parody",
+              "Police Detective",
+              "Psychopath",
+              "Road Movie",
+              "Robot",
+              "Spirituality",
+              "Superhero",
+              "Time Travel",
+              "Vampire",
+              "Zombie"
+            ]
+          },
+          {
+            "id": "imdb-series-catalog",
+            "name": "IMDB",
+            "type": "series",
+            "extra": [
+              {
+                "name": "genre",
+                "options": [
+                  "Anime",
+                  "Anti Hero",
+                  "Based on Book",
+                  "Based on Comic",
+                  "Based on Novel",
+                  "Black Comedy",
+                  "Business",
+                  "Chick Flick",
+                  "Conspiracy",
+                  "Corruption",
+                  "Criminal Mastermind",
+                  "Cult",
+                  "Cult Film",
+                  "Espionage",
+                  "Fairy Tale",
+                  "Femme Fatale",
+                  "Futuristic",
+                  "Heist",
+                  "High School",
+                  "Knight",
+                  "Kung Fu",
+                  "Medieval Times",
+                  "Murder",
+                  "Ninja",
+                  "One Man Army",
+                  "Organised Crime",
+                  "Parody",
+                  "Police Detective",
+                  "Psychopath",
+                  "Road Movie",
+                  "Robot",
+                  "Spirituality",
+                  "Superhero",
+                  "Time Travel",
+                  "Vampire",
+                  "Zombie"
+                ]
+              }
+            ],
+            "genres": [
+              "Anime",
+              "Anti Hero",
+              "Based on Book",
+              "Based on Comic",
+              "Based on Novel",
+              "Black Comedy",
+              "Business",
+              "Chick Flick",
+              "Conspiracy",
+              "Corruption",
+              "Criminal Mastermind",
+              "Cult",
+              "Cult Film",
+              "Espionage",
+              "Fairy Tale",
+              "Femme Fatale",
+              "Futuristic",
+              "Heist",
+              "High School",
+              "Knight",
+              "Kung Fu",
+              "Medieval Times",
+              "Murder",
+              "Ninja",
+              "One Man Army",
+              "Organised Crime",
+              "Parody",
+              "Police Detective",
+              "Psychopath",
+              "Road Movie",
+              "Robot",
+              "Spirituality",
+              "Superhero",
+              "Time Travel",
+              "Vampire",
+              "Zombie"
+            ]
+          }
+        ],
+        "behaviorHints": {
+          "configurable": true
+        }
+      },
+      "flags": {}
+    }
+  ]
+}
