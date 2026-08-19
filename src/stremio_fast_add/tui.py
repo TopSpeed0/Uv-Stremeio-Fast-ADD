@@ -13,7 +13,7 @@ import threading
 
 from . import __version__, api, core, store
 
-HELP = "space toggle | a all | n none | i install | d dry-run | r replace | e export | q quit"
+HELP = "j/k or arrows move  space pick  a all  n none  c sign in  i install  d dry-run  r replace  e export  q quit"
 STATUS_TEXT = {
     core.PENDING: "waiting",
     core.CHECKING: "checking",
