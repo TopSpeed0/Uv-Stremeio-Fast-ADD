@@ -6,11 +6,14 @@ You export your Stremio addons once, push the JSON to this repo, and your friend
 A dark little window opens, they sign in, hit **Install**, and watch every addon turn green or red.
 
 ```bash
-uvx --from git+https://github.com/TopSpeed0/Uv-Stremeio-Fast-ADD stremio-fast-add
+uvx --from https://github.com/TopSpeed0/Uv-Stremeio-Fast-ADD/archive/refs/heads/main.zip stremio-fast-add
 ```
 
-No clone, no `pip install`, no virtualenv, no dependencies — the whole thing is standard-library Python
-plus tkinter, so `uv` downloads it and runs it in a couple of seconds.
+No clone, no `pip install`, no virtualenv, no dependencies, **not even git** — the whole thing is
+standard-library Python plus tkinter, so `uv` downloads it and runs it in a couple of seconds.
+
+Tested end to end in a fresh Windows Sandbox: uv installed, addons pushed to the account, streams and
+subtitles playing — on a machine that had nothing on it.
 
 ---
 
@@ -20,7 +23,17 @@ plus tkinter, so `uv` downloads it and runs it in a couple of seconds.
 
 1. **אתה** מריץ פעם אחת `--export` — כל התוספים מהחשבון שלך נשמרים לקובץ `default.json` בתוך הריפו.
 2. אתה עושה `git push`.
-3. **החבר** מריץ פקודת `uvx` אחת. נפתח GUI, הוא מתחבר לחשבון Stremio שלו, לוחץ Install —
+3. **החבר** מריץ שתי פקודות — אחת שמתקינה את uv, ואחת שמריצה את הכלי:
+
+```powershell
+powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+```
+
+```powershell
+uvx --from https://github.com/TopSpeed0/Uv-Stremeio-Fast-ADD/archive/refs/heads/main.zip stremio-fast-add
+```
+
+   **בלי אדמין**, ולפתוח טרמינל חדש בין השתיים. נפתח GUI, הוא מתחבר לחשבון Stremio שלו, לוחץ Install —
    וכל תוסף מקבל סטטוס משלו: ירוק = הותקן, סגול = כבר היה שם, אדום = נכשל (עם הסיבה).
 
 התוספים הקיימים אצל החבר **לא נמחקים** — הם רק מתווספים, בלי כפילויות.
@@ -51,10 +64,13 @@ You can also do it from the GUI: connect, then **Export my addons**.
 ### 2. Install it (your friend, once)
 
 ```bash
-uvx --from git+https://github.com/TopSpeed0/Uv-Stremeio-Fast-ADD stremio-fast-add
+uvx --from https://github.com/TopSpeed0/Uv-Stremeio-Fast-ADD/archive/refs/heads/main.zip stremio-fast-add
 ```
 
 That's the whole handoff. Everything ships inside the package, including the addon list.
+
+If they have git and want the repo form instead, `--from git+https://github.com/TopSpeed0/Uv-Stremeio-Fast-ADD`
+does the same thing. The zip is the default here because a bare Windows box has no git.
 
 ---
 
@@ -110,10 +126,10 @@ First hit wins:
 3. `./addons.json` in the current folder
 4. the bundled `src/stremio_fast_add/profiles/default.json`
 
-So you can also skip git entirely and share a raw gist:
+So you can leave this repo's own profile alone and point at a raw gist instead:
 
 ```bash
-uvx --from git+https://github.com/TopSpeed0/Uv-Stremeio-Fast-ADD stremio-fast-add \
+uvx --from https://github.com/TopSpeed0/Uv-Stremeio-Fast-ADD/archive/refs/heads/main.zip stremio-fast-add \
     --addons https://gist.githubusercontent.com/.../addons.json
 ```
 
@@ -132,12 +148,25 @@ uvx --from git+https://github.com/TopSpeed0/Uv-Stremeio-Fast-ADD stremio-fast-ad
 ## Requirements
 
 `uv`, and that's it — it brings its own Python. Windows, macOS and Linux; the GUI needs tkinter, which uv's
-Python ships with (on a distro Python without it, use `--cli`).
+managed Python ships with (on a distro Python without it, use `--cli`).
 
-Install uv:
+Install uv on Windows:
 
 ```bash
-winget install --id=astral-sh.uv -e
+powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+```
+
+Astral's official installer, no admin needed — it installs into your own user profile. **Don't run it
+elevated:** as admin it lands in the administrator's profile and `uv` won't be on your PATH afterwards.
+Open a new terminal once it finishes so the PATH change takes effect.
+
+`winget install --id=astral-sh.uv -e` works too, where winget exists — Windows Sandbox, for one, has neither
+winget nor git, which is why the script above and the zip URL are the defaults here.
+
+On macOS and Linux:
+
+```bash
+curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 
 ## Local development
