@@ -51,6 +51,11 @@ space toggle   a all   n none   c sign in   i install   d dry run   r replace   
 A Linux desktop session still defaults to the console UI, since that is what a terminal implies; pass
 `--gui` for the window.
 
+**On WSL, `--gui` gives you the real desktop window** — WSLg already provides the display, so the Tk
+window opens on the Windows desktop like any other app. No X server, no VNC, no xrdp, no desktop
+environment to install. Verified on WSL2 Ubuntu: `/mnt/wslg` mounted, `WAYLAND_DISPLAY=wayland-0`, and Tk
+reporting the host's own 3840x1080 screen.
+
 ### Already have `uv`?
 
 Then it's just the one command, on any OS:
