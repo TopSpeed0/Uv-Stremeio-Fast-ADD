@@ -49,6 +49,37 @@ curl -LsSf https://raw.githubusercontent.com/TopSpeed0/Uv-Stremeio-Fast-ADD/main
 
 On WSL that opens a normal Windows window, courtesy of WSLg — see below.
 
+### Android (Termux)
+
+`uv` has no `aarch64-linux-android` build, so the `curl | sh` line above dies with
+`ERROR: there isn't a download for your platform aarch64-linux-android`. Doesn't matter — the app is
+standard-library Python, so Termux's own interpreter runs it:
+
+```bash
+pkg install python git
+git clone https://github.com/TopSpeed0/Uv-Stremeio-Fast-ADD
+cd Uv-Stremeio-Fast-ADD
+pip install -e .
+stremio-fast-add --tui
+```
+
+Termux's CPython ships a real `_curses`, so you get the same console UI as any Linux box — `j`/`k` move
+if your soft keyboard has no arrows. `pip install -e` keeps the clone live, so `git pull` picks up a
+freshly pushed profile with no reinstall and no `uv` cache to fight.
+
+To re-run later: `cd Uv-Stremeio-Fast-ADD && stremio-fast-add --tui`. The entry point stays on PATH
+across sessions.
+
+Prefer `uv`? Termux packages it, but you must point it at the system Python or it tries to download a
+managed interpreter that has no Android build either:
+
+```bash
+pkg install uv
+uvx --refresh --python "$PREFIX/bin/python" \
+    --from https://github.com/TopSpeed0/Uv-Stremeio-Fast-ADD/archive/refs/heads/main.zip \
+    stremio-fast-add --tui
+```
+
 ### Which front end you get
 
 | where | default | override with |
@@ -56,6 +87,7 @@ On WSL that opens a normal Windows window, courtesy of WSLg — see below.
 | Windows | the desktop window (tkinter) | `--cli` |
 | macOS | the desktop window (tkinter) | `--tui`, `--cli` |
 | Linux, WSL, SSH — in a terminal | the console UI (curses) | `--gui`, `--cli` |
+| Android (Termux) | the console UI (curses) | `--cli`; no `--gui` — there is no display |
 | no terminal and no display | plain linear output | — |
 
 `--tui` is not offered on Windows: CPython there ships the `curses` package without the `_curses`
@@ -144,6 +176,7 @@ Stremio מקבל רק כתיבה של **כל** אוסף התוספים בבת א
 | ווינדוס | חלון (tkinter) | `--cli` |
 | מק | חלון (tkinter) | `--tui`, `--cli` |
 | לינוקס, WSL, SSH — בטרמינל | ממשק קונסולה (curses) | `--gui`, `--cli` |
+| אנדרואיד (Termux) | ממשק קונסולה (curses) | `--cli`; אין `--gui` — אין מסך |
 | בלי טרמינל ובלי מסך | פלט טקסט רגיל | — |
 
 `--tui` לא זמין בווינדוס: ה-CPython שם מגיע עם תיקיית `curses` בלי הרחבת ה-C שמאחוריה, אז אין ממשק קונסולה
@@ -157,6 +190,36 @@ curl -LsSf https://raw.githubusercontent.com/TopSpeed0/Uv-Stremeio-Fast-ADD/main
 
 ב-WSL זה ייפתח כחלון ווינדוס רגיל — WSLg כבר מספק את המסך, בלי שרת X, בלי VNC, בלי xrdp ובלי סביבת שולחן
 עבודה להתקין.
+
+### אנדרואיד (Termux)
+
+ל-`uv` אין build ל-`aarch64-linux-android`, אז שורת ה-`curl | sh` נופלת עם
+`ERROR: there isn't a download for your platform aarch64-linux-android`. לא נורא — הכלי הוא Python
+סטנדרטי בלבד, אז ה-Python של Termux מריץ אותו:
+
+```bash
+pkg install python git
+git clone https://github.com/TopSpeed0/Uv-Stremeio-Fast-ADD
+cd Uv-Stremeio-Fast-ADD
+pip install -e .
+stremio-fast-add --tui
+```
+
+ה-CPython של Termux כולל `_curses` אמיתי, אז מקבלים בדיוק את ממשק הקונסולה הרגיל — `j`/`k` מזיזים אם
+למקלדת אין חיצים. `pip install -e` משאיר את הקלון חי, אז `git pull` מביא פרופיל מעודכן בלי התקנה מחדש
+ובלי קאש של uv להילחם בו.
+
+להרצה חוזרת: `cd Uv-Stremeio-Fast-ADD && stremio-fast-add --tui`.
+
+מעדיף `uv`? יש חבילה ב-Termux, אבל חובה להפנות אותו ל-Python של המערכת, אחרת הוא ינסה להוריד מפרש מנוהל
+שגם לו אין build לאנדרואיד:
+
+```bash
+pkg install uv
+uvx --refresh --python "$PREFIX/bin/python" \
+    --from https://github.com/TopSpeed0/Uv-Stremeio-Fast-ADD/archive/refs/heads/main.zip \
+    stremio-fast-add --tui
+```
 
 ### מקשים בממשק הקונסולה
 
@@ -302,6 +365,10 @@ Every flag:
 
 Exit codes: `0` all good, `1` something failed to install, `2` could not run at all.
 
+Headless environments — CI runners, Colab, anything without a TTY — need `--cli` plus
+`STREMIO_EMAIL` / `STREMIO_PASSWORD` (or `STREMIO_AUTHKEY`) in the environment: curses cannot
+initialise without a terminal, and an interactive password prompt has nothing to read from.
+
 ---
 
 ## Where the addon list comes from
@@ -339,6 +406,9 @@ uvx --from https://github.com/TopSpeed0/Uv-Stremeio-Fast-ADD/archive/refs/heads/
 The window needs `tkinter` and the console UI needs `curses`; both are standard library, and uv's managed
 Python ships tkinter on every platform. If you land on a stripped-down distro Python with neither, `--cli`
 always works.
+
+On Android there is no `uv` build at all — use Termux's own Python, see
+[Android (Termux)](#android-termux).
 
 Install uv on Windows:
 
